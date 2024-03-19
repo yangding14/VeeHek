@@ -30,6 +30,7 @@ export default function App() {
 
   if (!loaded && !error) {
     return null;
+    // yapo yapo
   }
 
   return (
