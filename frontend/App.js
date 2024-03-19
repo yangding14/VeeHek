@@ -41,7 +41,10 @@ export default function App() {
     // <AppNav />
     <View style={styles.container}>
       <Wallet_Home />
+      
     </View>
+
+    // yapo testing branch
   );
 }
 
