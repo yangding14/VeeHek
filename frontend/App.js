@@ -31,6 +31,7 @@ export default function App() {
   if (!loaded && !error) {
     return null;
   }
+  //yapoooooooo
 
   return (
     // <View style={styles.container}>
