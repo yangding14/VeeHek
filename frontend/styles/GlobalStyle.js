@@ -10,7 +10,8 @@ export const colors = {
     yellowLight: "#F8D186",
     greenLight: "#B9CEBF",
     purpleLight: "#CEB9C6",
-
+    grey:"#ADADAD",
+    blueLight:"#307FE2"
 };
 
 const designed_on_width = 430;

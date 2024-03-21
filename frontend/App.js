@@ -5,6 +5,8 @@ import Test from "./screens/Test";
 import { useFonts } from "expo-font";
 import Wallet_Home from "./screens/Wallet_Home";
 import { colors } from "./styles/GlobalStyle";
+import  Settings from "./screens/Settings";
+import Settings_EditProfile from "./screens/Settings_EditProfile";
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -39,7 +41,9 @@ export default function App() {
     // </View>
     // <AppNav />
     <View style={styles.container}>
-      <Wallet_Home />
+      {/* <Wallet_Home /> */}
+      {/* <Settings/>  */}
+      <Settings_EditProfile/> 
     </View>
   );
 }
