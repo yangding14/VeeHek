@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { appStyles, sh, fonts, colors } from '../styles/GlobalStyle';
 
-function Settings_PrivacyPolicy(props) {
+function Settings_AboutUs(props) {
     return (
         <View style={appStyles.appBackground}>
             <View style = {{ flexDirection: 'row', alignItems: 'center',justifyContent: 'flex-start'}}>
@@ -28,4 +28,4 @@ function Settings_PrivacyPolicy(props) {
     );
 }
 
-export default Settings_PrivacyPolicy;
+export default Settings_AboutUs;

@@ -6,6 +6,7 @@ import { useFonts } from "expo-font";
 import Wallet_Home from "./screens/Wallet_Home";
 import { colors } from "./styles/GlobalStyle";
 import Settings_PrivacyPolicy from "./screens/Settings_PrivacyPolicy";
+import Settings_AboutUs from "./screens/Settings_AboutUs";
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -38,6 +39,7 @@ export default function App() {
     <View style={styles.container}>
       {/* <Wallet_Home /> */}
       <Settings_PrivacyPolicy />
+      {/* <Settings_AboutUs /> */}
     </View>
   );
 }
