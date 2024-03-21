@@ -11,6 +11,8 @@ import Settings_TermsAndCon from "./screens/Settings_TermsAndCon";
 import SplashPage from "./screens/SplashPage";
 import LR_Register from "./screens/LR_Register";
 import LR_Login from "./screens/LR_Login";
+import LR_ForgotPassword from "./screens/LR_ForgotPassword";
+
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -46,8 +48,9 @@ export default function App() {
       {/* <Settings_AboutUs /> */}
       {/* <Settings_TermsAndCon/> */}
       {/* <SplashPage/> */}
-      <LR_Register/>
+      {/* <LR_Register/> */}
       {/* <LR_Login/>  */}
+      <LR_ForgotPassword/>
     </View>
   );
 }
