@@ -12,6 +12,7 @@ import SplashPage from "./screens/SplashPage";
 import LR_Register from "./screens/LR_Register";
 import LR_Login from "./screens/LR_Login";
 import LR_ForgotPassword from "./screens/LR_ForgotPassword";
+import LR_CheckEmail from "./screens/LR_CheckEmail";
 
 
 export default function App() {
@@ -50,7 +51,8 @@ export default function App() {
       {/* <SplashPage/> */}
       {/* <LR_Register/> */}
       {/* <LR_Login/>  */}
-      <LR_ForgotPassword/>
+      {/* <LR_ForgotPassword/> */}
+      <LR_CheckEmail/>
     </View>
   );
 }
