@@ -7,6 +7,7 @@ import Wallet_Home from "./screens/Wallet_Home";
 import { colors } from "./styles/GlobalStyle";
 import Settings_PrivacyPolicy from "./screens/Settings_PrivacyPolicy";
 import Settings_AboutUs from "./screens/Settings_AboutUs";
+import Settings_TermsAndCon from "./screens/Settings_TermsAndCon";
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -38,8 +39,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       {/* <Wallet_Home /> */}
-      <Settings_PrivacyPolicy />
+      {/* <Settings_PrivacyPolicy /> */}
       {/* <Settings_AboutUs /> */}
+      <Settings_TermsAndCon/>
     </View>
   );
 }

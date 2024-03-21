@@ -7,7 +7,7 @@ function Settings_AboutUs(props) {
         <View style={appStyles.appBackground}>
             <View style = {{ flexDirection: 'row', alignItems: 'center',justifyContent: 'flex-start'}}>
             <Image source={require('../assets/arrowLeft.png')} />
-            <Text style={{flex: 1, textAlign: 'center',fontFamily: fonts.RubikBold, fontSize: sh(30)}}>About Us</Text>
+            <Text style={{flex: 1, textAlign: 'center',fontFamily: fonts.RubikBold, fontSize: sh(20)}}>About Us</Text>
             </View>
 
             {/* <Text style={{fontFamily: fonts.RubikBold, fontSize: sh(30),justifyContent: 'center'}}>About Us</Text> */}
