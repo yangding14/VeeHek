@@ -5,6 +5,7 @@ import Test from "./screens/Test";
 import { useFonts } from "expo-font";
 import Wallet_Home from "./screens/Wallet_Home";
 import { colors } from "./styles/GlobalStyle";
+import AISelection from "./screens/AISelection";
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -39,7 +40,7 @@ export default function App() {
     // </View>
     // <AppNav />
     <View style={styles.container}>
-      <Wallet_Home />
+      <AISelection/>
       
     </View>
 
