@@ -9,6 +9,8 @@ import Settings_PrivacyPolicy from "./screens/Settings_PrivacyPolicy";
 import Settings_AboutUs from "./screens/Settings_AboutUs";
 import Settings_TermsAndCon from "./screens/Settings_TermsAndCon";
 import SplashPage from "./screens/SplashPage";
+import LR_Register from "./screens/LR_Register";
+import LR_Login from "./screens/LR_Login";
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -43,7 +45,9 @@ export default function App() {
       {/* <Settings_PrivacyPolicy /> */}
       {/* <Settings_AboutUs /> */}
       {/* <Settings_TermsAndCon/> */}
-      <SplashPage/>
+      {/* <SplashPage/> */}
+      <LR_Register/>
+      {/* <LR_Login/>  */}
     </View>
   );
 }
