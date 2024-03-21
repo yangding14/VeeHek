@@ -8,6 +8,7 @@ import { colors } from "./styles/GlobalStyle";
 import Settings_PrivacyPolicy from "./screens/Settings_PrivacyPolicy";
 import Settings_AboutUs from "./screens/Settings_AboutUs";
 import Settings_TermsAndCon from "./screens/Settings_TermsAndCon";
+import SplashPage from "./screens/SplashPage";
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -41,7 +42,8 @@ export default function App() {
       {/* <Wallet_Home /> */}
       {/* <Settings_PrivacyPolicy /> */}
       {/* <Settings_AboutUs /> */}
-      <Settings_TermsAndCon/>
+      {/* <Settings_TermsAndCon/> */}
+      <SplashPage/>
     </View>
   );
 }
