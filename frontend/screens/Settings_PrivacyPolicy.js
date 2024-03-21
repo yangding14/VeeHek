@@ -13,7 +13,7 @@ function Settings_PrivacyPolicy(props) {
         }}
       >
         <Image source={require("../assets/arrowLeft.png")} />
-        <Text style={{ flex: 1, textAlign: "center", fontFamily: fonts.RubikBold, fontSize: sh(30),paddingBottom:10}}>Privacy Policy</Text>
+        <Text style={{ flex: 1, textAlign: "center", fontFamily: fonts.RubikBold, fontSize: sh(20),paddingBottom:10}}>Privacy Policy</Text>
       </View>
       <View style = {{marginHorizontal: -sw(40)}}>
         <ScrollView style ={{paddingHorizontal: sw(40)}}>
