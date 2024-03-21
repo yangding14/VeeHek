@@ -52,7 +52,7 @@ export const appStyles = StyleSheet.create({
     appBackground: {
         backgroundColor: colors.bgWhite,
         flex: 1,
-        paddingHorizontal: sw(40),
+        marginHorizontal: sw(40),
         marginTop: sh(80)
     }
 })
