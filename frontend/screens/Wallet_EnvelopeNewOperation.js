@@ -23,12 +23,16 @@ function Wallet_EnvelopeNewOperation({isVisible, setIsVisible}) {
                     <Text style={{fontFamily: fonts.RubikBold, fontSize: sh(26), textAlign: 'center'}}>New Operation</Text>
                     <Text style={{position: 'absolute', right: sw(30), top: sh(34), fontFamily: fonts.PoppinsMedium, fontSize: sh(18), color: colors.yellow}}>Create</Text>
 
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: sh(20) }}>
+                    <View style={{ flexDirection: 'row', marginTop: sh(20) }}>
                         <TouchableWithoutFeedback onPress={() => setOperationType('expense')}>
-                            <Text style={[styles.button, operationType === 'expense' && styles.buttonFocused]}>Expense</Text>
+                            <View style={[styles.text, operationType === 'expense' && styles.textFocused]}>
+                                <Text >Expense</Text>
+                            </View>
                         </TouchableWithoutFeedback>
                         <TouchableWithoutFeedback onPress={() => setOperationType('income')}>
-                            <Text style={[styles.button, operationType === 'income' && styles.buttonFocused]}>Income</Text>
+                            <View style={[styles.text, operationType === 'income' && styles.textFocused]}>
+                                <Text >Income</Text>
+                            </View>
                         </TouchableWithoutFeedback>
                     </View>
 
@@ -36,7 +40,7 @@ function Wallet_EnvelopeNewOperation({isVisible, setIsVisible}) {
 
 
                     <View style={styles.line} />
-                    <TextInput inputMode='numeric' placeholder='RM 0' style={{marginTop: sh(100), width: '100%', textAlign:'center', fontFamily: fonts.RubikBold, fontSize: sh(24)}} />
+                    <TextInput inputMode='numeric' placeholder='RM 0' style={{marginTop: sh(20), width: '100%', textAlign:'center', fontFamily: fonts.RubikBold, fontSize: sh(24)}} />
                     <View style={styles.line} />
                     <View style={{alignItems: 'center', marginTop: sh(20)}}>
                         <DateTimePicker mode="date" value={date} onChange={onChange} />
@@ -79,12 +83,21 @@ const styles = StyleSheet.create({
         paddingHorizontal: sw(20),
         borderWidth: 1,
         borderRadius: sw(10),
-        borderColor: colors.gray,
+        backgroundColor: colors.black,
+        opacity: 0.15,
+        flex: 1,
+        marginHorizontal: sw(30),
     },
-    buttonFocused: {
-        backgroundColor: colors.yellow, // Add different style for focused button
+    text: {
+        fontFamily: fonts.InterBold,
+        fontSize: sh(18),
         color: colors.black,
+        opacity: 0.5,
+        textAlign: 'center',
     },
+    textFocused: {
+        opacity: 1,
+    }
 })
 
 export default Wallet_EnvelopeNewOperation;

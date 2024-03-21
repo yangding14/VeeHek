@@ -42,6 +42,7 @@ export default function App() {
     // <AppNav />
     <View style={styles.container}>
       <Wallet_Envelope />
+      {/* <Wallet_Home /> */}
     </View>
   );
 }
