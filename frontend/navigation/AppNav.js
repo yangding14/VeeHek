@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image, Settings } from 'react-native';
 // import LR__Landing_Page from '../screens/LR__Landing_Page';
 // import LR__Register_Login from '../screens/LR__Register_Login';
 // import LR__Forget_Password from '../screens/LR__Forget_Password';
@@ -12,6 +12,7 @@ import Wallet_Home from '../screens/Wallet_Home';
 import Wallet_Envelope from '../screens/Wallet_Envelope';
 import Test from '../screens/Test';
 import Wallet_EnvelopeDebt from '../screens/Wallet_EnvelopeDebt';
+import Setting from '../screens/Settings';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -43,13 +44,13 @@ function AppNav() {
                 <Tab.Navigator initialRouteName='Home' screenOptions={screenOptions}>
                     <Tab.Screen
                         name="Home"
-                        component={Home}
+                        component={HomeTab}
                         options={{title: 'Wallet Home'}}
                         initialParams={{name: 'Song Jun'}}
                     />
                     <Tab.Screen
-                        name="Test"
-                        component={Wallet_EnvelopeDebt}
+                        name="Settings"
+                        component={SettingTab}
                     />
                 </Tab.Navigator>
             </NavigationContainer>
@@ -57,11 +58,19 @@ function AppNav() {
     );
 }
 
-function Home(){
+function HomeTab(){
     return(
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen name="Wallet_Home" component={Wallet_Home} />
             <Stack.Screen name="Wallet_Envelope" component={Wallet_Envelope} />
+        </Stack.Navigator>
+    )
+}
+
+function SettingTab(){
+    return(
+        <Stack.Navigator screenOptions={screenOptions}>
+            <Stack.Screen name="SettingsPage" component={Setting} />
         </Stack.Navigator>
     )
 }
