@@ -1,11 +1,13 @@
 import React from 'react';
 import { Text,ScrollView, StyleSheet, View, Image } from 'react-native';
 import {appStyles, colors, fonts, sh, sw} from '../styles/GlobalStyle';
+import AISelection_ModelBox from '../components/AISelection_ModelBox';
+import AISelectionFooter from '../components/AISelectionFooter';
 
 function AISelection(props) {
     return (
         <ScrollView style= {appStyles.appBackground}>
-            <Text style={{fontFamily: fonts.RubikBold, fontSize: sh(36), paddingHorizontal: sw(20), paddingBottom: sh(10)}}>AI Selections</Text>
+            <Text style={{fontFamily: fonts.RubikBold, fontSize: sh(36), paddingHorizontal: sw(20), paddingBottom: sh(10)}}>Select Your Finance AI Partner</Text>
             <View style={styles.viewSubscriptionBox}>
                 <View style =  {styles.lineViewSubscriptionBox}/>
                 <View style= {styles.flexBoxViewSubscriptionBox}>
@@ -14,6 +16,13 @@ function AISelection(props) {
                 </View>
                 <View style =  {styles.lineViewSubscriptionBox}/>
             </View>
+            <AISelection_ModelBox modelName = {'Freebie'}/>
+            <AISelection_ModelBox modelName = {'Wisey'}/>
+            <AISelection_ModelBox modelName = {'Debty'}/>
+            <View style={{padding:sh(50)}}></View>
+            <AISelectionFooter />
+
+        
         </ScrollView>
     );
 }

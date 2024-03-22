@@ -8,7 +8,6 @@ function Wallet_Home(props) {
         <View style={appStyles.appBackground}>
             {/* TODO: Put user name here as variable */}
             <Text style={{fontFamily: fonts.RubikBold, fontSize: sh(36)}}>Hi, Song Jun</Text>
-            
             <WalletHomeTotalRemaining />
         </View>
     );
