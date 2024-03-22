@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 import { colors, fonts, sh, sw } from '../styles/GlobalStyle';
 
-function WalletHomeEnvelope({itemId, EnvelopeName, EnvelopeAmount, ImageSrc}) {
+function WalletHomeEnvelope({itemId, EnvelopeName, EnvelopeAmount, ImageSrc, onPressEnvelope}) {
     const colorList = [colors.redLight, colors.yellowLight, colors.greenLight, colors.purpleLight]
 
     const styles = StyleSheet.create({
@@ -29,7 +29,7 @@ function WalletHomeEnvelope({itemId, EnvelopeName, EnvelopeAmount, ImageSrc}) {
 
 
     return (
-        <View style={styles.bg}>
+        <TouchableOpacity style={styles.bg} onPress={onPressEnvelope}>
             <Text style={styles.textEnvName}>{EnvelopeName}</Text>
 
             <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -38,7 +38,7 @@ function WalletHomeEnvelope({itemId, EnvelopeName, EnvelopeAmount, ImageSrc}) {
             </View>
 
             
-        </View>
+        </TouchableOpacity>
     );
     
 }

@@ -4,7 +4,7 @@ import { colors, fonts, sh, sw } from '../styles/GlobalStyle';
 
 function WalletEnvelopeTotalRemaining(props) {
     let totalRemaining = 800;
-    let currentRemaining = 695;
+    let currentRemaining = 400;
 
     const styles = StyleSheet.create({
         cardBg: {

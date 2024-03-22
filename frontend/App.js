@@ -35,13 +35,13 @@ export default function App() {
   //yapoooooooo
 
   return (
-    // <View style={styles.container}>
-    //   <Text>我离开!</Text>
-    //   <StatusBar style="auto" />
-    // </View>
-    // <AppNav />
     <View style={styles.container}>
-      <Wallet_Envelope />
+    {/* //   <Text>我离开!</Text>
+    //   <StatusBar style="auto" />
+    // </View> */}
+      <AppNav />
+      {/* <Test /> */}
+      {/* <Wallet_Envelope /> */}
       {/* <Wallet_Home /> */}
     </View>
   );
@@ -50,6 +50,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F9F9F9"
+    backgroundColor: 'purple'
   },
 });
