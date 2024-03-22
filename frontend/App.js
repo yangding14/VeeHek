@@ -41,8 +41,8 @@ export default function App() {
     // </View>
     // <AppNav />
     <View style={styles.container}>
-      {/* <AISelection/> */}
-      <SubscriptionModel />
+      <AISelection/>
+      {/* <SubscriptionModel /> */}
       
     </View>
 

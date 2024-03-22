@@ -27,8 +27,8 @@ const footerStyle = StyleSheet.create({
     },
 
     logoStyle: {
-        width: 80,
-        height: 80,
+        width: sw(80),
+        height: sh(80),
     }
 })
 
