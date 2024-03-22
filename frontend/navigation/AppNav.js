@@ -69,6 +69,7 @@ function HomeTab(){
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen name="Wallet_Home" component={Wallet_Home} />
             <Stack.Screen name="Wallet_Envelope" component={Wallet_Envelope} />
+            <Stack.Screen name="Wallet_EnvelopeDebt" component={Wallet_EnvelopeDebt} />
         </Stack.Navigator>
     )
 }

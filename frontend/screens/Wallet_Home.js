@@ -9,14 +9,19 @@ import { useNavigation } from '@react-navigation/native';
 function Wallet_Home(props) {
     const navigation = useNavigation();
 
-    const onPressEnvelope = () =>{
-        navigation.navigate('Wallet_Envelope');
+    const onPressEnvelope = (item) =>{
+        if(item.EnvelopeName === 'Debt'){
+            navigation.navigate('Wallet_EnvelopeDebt');
+        }else{
+            navigation.navigate('Wallet_Envelope');
+        }
+
     }
 
     const envelopeData = [
         { id: '1', EnvelopeName: 'Food', EnvelopeAmount: 'RM800', ImageSrc: require('../assets/food_icon.png') },
         { id: '2', EnvelopeName: 'Travel', EnvelopeAmount: 'RM500', ImageSrc: require('../assets/transport_icon.png') },
-        { id: '3', EnvelopeName: 'Travel', EnvelopeAmount: 'RM500', ImageSrc: require('../assets/transport_icon.png') },
+        { id: '3', EnvelopeName: 'Debt', EnvelopeAmount: 'RM1000', ImageSrc: require('../assets/transport_icon.png') },
         // Add more envelope data as needed
     ];
 
@@ -39,7 +44,7 @@ function Wallet_Home(props) {
                                     EnvelopeName={item.EnvelopeName}
                                     EnvelopeAmount={item.EnvelopeAmount}
                                     ImageSrc={item.ImageSrc}
-                                    onPressEnvelope={onPressEnvelope}
+                                    onPressEnvelope={() => onPressEnvelope(item)}
                                     />)}
                         // <TouchableWithoutFeedback onPress={onPressEnvelope}>
                             // {/* <View style={{}}> */}

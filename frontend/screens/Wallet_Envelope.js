@@ -68,7 +68,7 @@ function Wallet_Envelope({navigation}) {
                                 alignItems: 'center',
                                 position: 'absolute',
                                 bottom: sh(46),
-                                left: sw(40),
+                                left: sw(0),
 
                                 shadowRadius: sw(4), //for ios
                                 shadowColor:colors.black, //for ios
