@@ -1,15 +1,19 @@
 import React,{useState} from 'react';
-import { View, Image, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
+import { View, Image, Text, StyleSheet, TouchableOpacity, TextInput, TouchableWithoutFeedback } from 'react-native';
 import { appStyles, colors, fonts, sh } from '../styles/GlobalStyle';
+import { useNavigation } from '@react-navigation/native';
 
 function Settings_ChangePassword(props) {
+    const navigation = useNavigation();
     const [password, setPassword] = useState(''); 
     const [isPasswordSecure, setIsPasswordSecure] = useState(true);
     const [isConfirmPasswordSecure, setIsConfirmPasswordSecure] = useState(true);
     return (
         <View style={appStyles.appBackground}>
             <View style={styles.header}>
-            <Image source={require('../assets/backButton.png')} style={styles.backButton} />
+            <TouchableWithoutFeedback hitSlop={40} onPress={() => navigation.goBack()}>
+                    <Image source={require('../assets/arrow_left.png')} style={styles.backButton} />
+                </TouchableWithoutFeedback>
             <Text style={styles.headerText}>Edit Profile</Text>
             </View>
             <Text style={{fontFamily:fonts.RubikRegular, fontSize:sh(18), color:colors.grey, paddingTop:sh(20)}}>
