@@ -13,6 +13,7 @@ import LR_Register from "./screens/LR_Register";
 import LR_Login from "./screens/LR_Login";
 import LR_ForgotPassword from "./screens/LR_ForgotPassword";
 import LR_CheckEmail from "./screens/LR_CheckEmail";
+import LR_PasswordChanged from "./screens/LR_PasswordChanged";
 
 
 export default function App() {
@@ -52,7 +53,8 @@ export default function App() {
       {/* <LR_Register/> */}
       {/* <LR_Login/>  */}
       {/* <LR_ForgotPassword/> */}
-      <LR_CheckEmail/>
+      {/* <LR_CheckEmail/> */}
+      <LR_PasswordChanged/>
     </View>
   );
 }
