@@ -10,7 +10,11 @@ export const colors = {
     yellowLight: "#F8D186",
     greenLight: "#B9CEBF",
     purpleLight: "#CEB9C6",
-
+    grey:"#ADADAD",
+    blueLight:"#307FE2",
+    green:"#31B447",
+    orange:"#FFA500",
+    red:"#FF0000",
 };
 
 const designed_on_width = 430;
@@ -52,7 +56,7 @@ export const appStyles = StyleSheet.create({
     appBackground: {
         backgroundColor: colors.bgWhite,
         flex: 1,
-        paddingHorizontal: sw(40),
+        marginHorizontal: sw(40),
         marginTop: sh(80)
     }
 })
