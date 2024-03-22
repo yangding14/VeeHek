@@ -5,7 +5,7 @@ import { View, Text } from 'react-native';
 function Test(props) {
     return (
         <View style={{flex:1, alignContent: 'center', justifyContent: 'center'}}>
-            <Text style={{fontFamily: fonts.PoppinsBlack, fontSize: sh(40), textAlign: 'center' }}>Test</Text>
+            <Text style={{fontFamily: fonts.PoppinsBlack, fontSize: sh(40), textAlign: 'center' }}>NI QU CHI DA BIAN</Text>
         </View>
     );
 }

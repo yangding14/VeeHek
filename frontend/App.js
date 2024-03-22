@@ -5,6 +5,7 @@ import Test from "./screens/Test";
 import { useFonts } from "expo-font";
 import Wallet_Home from "./screens/Wallet_Home";
 import { colors } from "./styles/GlobalStyle";
+import Wallet_Envelope from "./screens/Wallet_Envelope";
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -34,23 +35,21 @@ export default function App() {
   //yapoooooooo
 
   return (
-    // <View style={styles.container}>
-    //   <Text>我离开!</Text>
-    //   <StatusBar style="auto" />
-    // </View>
-    // <AppNav />
     <View style={styles.container}>
-      <Wallet_Home />
-      
+    {/* //   <Text>我离开!</Text>
+    //   <StatusBar style="auto" />
+    // </View> */}
+      <AppNav />
+      {/* <Test /> */}
+      {/* <Wallet_Envelope /> */}
+      {/* <Wallet_Home /> */}
     </View>
-
-    // yapo testing branch
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F9F9F9"
+    backgroundColor: '#F9F9F9'
   },
 });
