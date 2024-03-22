@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text,ScrollView, StyleSheet, View, Image ,TouchableOpacity} from 'react-native';
+import { Text, StyleSheet, View, Image ,TouchableOpacity} from 'react-native';
 import {appStyles, colors, fonts, sh, sw} from '../styles/GlobalStyle';
 import MySubscriptionModelBoxView from '../components/MySubscriptionModelBoxView';
 import MySubscriptionPlans from '../components/MySubscriptionPlans';

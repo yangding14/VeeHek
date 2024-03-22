@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text,ScrollView, StyleSheet, View, Image ,TouchableOpacity} from 'react-native';
-import {appStyles, colors, fonts, sh, sw} from '../styles/GlobalStyle';
+import { Text, StyleSheet, View, Image} from 'react-native';
+import { colors, fonts, sh, sw} from '../styles/GlobalStyle';
 
 function MySubscriptionPlans(props) {
     return (

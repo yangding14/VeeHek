@@ -7,6 +7,7 @@ import Wallet_Home from "./screens/Wallet_Home";
 import { colors } from "./styles/GlobalStyle";
 import AISelection from "./screens/AISelection";
 import SubscriptionModel from "./screens/SubscriptionModel";
+import DebtRepaymentPage from "./screens/DebtRepaymentPage";
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -41,8 +42,9 @@ export default function App() {
     // </View>
     // <AppNav />
     <View style={styles.container}>
-      <AISelection/>
+      {/* <AISelection/> */}
       {/* <SubscriptionModel /> */}
+      <DebtRepaymentPage />
       
     </View>
 
