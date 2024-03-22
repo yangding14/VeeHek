@@ -65,10 +65,6 @@ const App = () => {
 
               <View style={{ borderBottomWidth: 1, borderBottomColor: 'black',opacity:0.1  }} />
                 <View style={styles.chatContainer}>
-                  
-                
-
-
                   {chatMessages.map((msg, index) => (
                     <View key={index} style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
                       {msg.sender === 'user' ? (
@@ -78,7 +74,6 @@ const App = () => {
                       )}
                     </View>
                   ))}
-
               </View>
 
 
@@ -94,12 +89,8 @@ const App = () => {
                     <Image source={require('../assets/SendButton.png')} style={{marginHorizontal: sw(10) }} />
                   </Pressable>
                 </View>
-
               </View>
-
-
-          </View>
-        
+          </View>    
       </Modal>
       <Pressable
         style={[styles.openButton]}
