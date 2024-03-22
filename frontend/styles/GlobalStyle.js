@@ -3,8 +3,6 @@ import { StyleSheet } from "react-native";
 
 export const colors = {
     yellow: "#FFC107",
-    black: "#000000",
-    grey: '#D9D9D9',
     white: "#FFFFFF",
     bgWhite: "#F9F9F9",
     greyBlue: "#2C383F",
@@ -12,7 +10,11 @@ export const colors = {
     yellowLight: "#F8D186",
     greenLight: "#B9CEBF",
     purpleLight: "#CEB9C6",
-    blueLight: "#B9C9CE",
+    grey:"#ADADAD",
+    blueLight:"#307FE2",
+    green:"#31B447",
+    orange:"#FFA500",
+    red:"#FF0000",
 };
 
 const designed_on_width = 430;
