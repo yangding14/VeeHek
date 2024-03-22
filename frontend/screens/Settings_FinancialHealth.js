@@ -1,9 +1,11 @@
 import React,{useState} from 'react';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 import { appStyles, colors, fonts, sh } from '../styles/GlobalStyle';
+import { useNavigation } from '@react-navigation/native';
 
 function Settings_FinancialHealth(props) {
+    const navigation = useNavigation();
     const [point, setPoint] = useState(60);
     const [addPoint, setAddPoint] = useState(10);
     const [spending, setSpending] = useState(50);
@@ -25,7 +27,9 @@ function Settings_FinancialHealth(props) {
     return (
         <View style={[appStyles.appBackground, {alignItems: "center"}]}>
             <View style={styles.header}>
-            <Image source={require('../assets/backButton.png')} style={styles.backButton} />
+            <TouchableWithoutFeedback hitSlop={40} onPress={() => navigation.goBack()}>
+                    <Image source={require('../assets/arrow_left.png')} style={styles.backButton} />
+                </TouchableWithoutFeedback>
             <Text style={styles.headerText}>Financial Health</Text>
             </View>
         <AnimatedCircularProgress

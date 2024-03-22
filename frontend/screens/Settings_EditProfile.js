@@ -1,11 +1,14 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TextInput, FlatList, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TextInput, FlatList, ScrollView, TouchableOpacity,TouchableWithoutFeedback } from 'react-native';
 import { appStyles,sh,fonts,colors } from '../styles/GlobalStyle';
 import Slider from '@react-native-community/slider';
 import EditProfileEnvelopes from '../components/EditProfileEnvelopes';
+import { useNavigation } from '@react-navigation/native';
 
 
 function Settings_EditProfile(props) {
+    const navigation = useNavigation();
+
     const [income, setIncome] = React.useState(0);
     const rangeValues = [0, 20000];
     const data = [
@@ -22,7 +25,9 @@ function Settings_EditProfile(props) {
     return (
         <View style={appStyles.appBackground}>
             <View style={styles.header}>
-            <Image source={require('../assets/backButton.png')} style={styles.backButton} />
+            <TouchableWithoutFeedback hitSlop={40} onPress={() => navigation.goBack()}>
+                    <Image source={require('../assets/arrow_left.png')} style={styles.backButton} />
+                </TouchableWithoutFeedback>
             <Text style={styles.headerText}>Edit Profile</Text>
             </View>
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -102,7 +107,6 @@ const styles = StyleSheet.create({
     inputBox:{
         borderColor: colors.grey, 
         borderWidth: 1,
-        borderBottomWidth: StyleSheet.hairlineWidth, 
         marginBottom: sh(10),
         fontFamily:fonts.PoppinsMedium,
         fontSize:sh(20),
@@ -129,7 +133,6 @@ const styles = StyleSheet.create({
         marginVertical: sh(20),
         justifyContent: 'center',
         alignItems: 'center',
-        
       },
       buttonText: {
         fontFamily: fonts.PoppinsMedium,

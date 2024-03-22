@@ -1,5 +1,5 @@
 import React from 'react';
-import { View,Text, StyleSheet,Image, Switch } from 'react-native';
+import { View,Text, StyleSheet,Image, Switch, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
 import { colors, fonts, sh } from '../styles/GlobalStyle';
 
 function SettingsRow(props) {
@@ -19,12 +19,12 @@ function SettingsRow(props) {
         );
     }
     return (
-        <View style={styles.background}>
+        <TouchableOpacity style={styles.background} onPress={props.onPressSettingRow}>
             <Text style={{fontFamily:fonts.RubikRegular, fontSize:sh(20)}}>
                 {props.text}
             </Text>
             <Image source={require('../assets/arrow_right.png')} />
-        </View>
+        </TouchableOpacity>
     );
 }
 

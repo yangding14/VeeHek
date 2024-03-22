@@ -21,6 +21,9 @@ import LR_WelcomePage from '../screens/LR_WelcomePage';
 import LR_Register from '../screens/LR_Register';
 import LR_ForgotPassword from '../screens/LR_ForgotPassword';
 import { colors } from '../styles/GlobalStyle';
+import Settings_EditProfile from '../screens/Settings_EditProfile';
+import Settings_ChangePassword from '../screens/Settings_ChangePassword';
+import Settings_FinancialHealth from '../screens/Settings_FinancialHealth';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -71,6 +74,9 @@ function SettingTab(){
     return(
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen name="SettingsPage" component={Setting} />
+            <Stack.Screen name="Settings_EditProfile" component={Settings_EditProfile}/>
+            <Stack.Screen name="Settings_ChangePassword" component={Settings_ChangePassword}/>
+            <Stack.Screen name="Settings_FinancialHealth" component={Settings_FinancialHealth}/>
         </Stack.Navigator>
     )
 }
