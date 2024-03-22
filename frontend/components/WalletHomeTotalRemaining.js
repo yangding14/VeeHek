@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         borderRadius: sh(10),
         height: sh(20),
         // TODO: Change width to dynamic value
-        width: '60%',
+        width: '30%',
         top: -sh(20)
     }
 })

@@ -5,10 +5,7 @@ import Test from "./screens/Test";
 import { useFonts } from "expo-font";
 import Wallet_Home from "./screens/Wallet_Home";
 import { colors } from "./styles/GlobalStyle";
-import  Settings from "./screens/Settings";
-import Settings_EditProfile from "./screens/Settings_EditProfile";
-import Settings_ChangePassword from "./screens/Settings_ChangePassword";
-import Settings_FinancialHealth from "./screens/Settings_FinancialHealth";
+import Wallet_Envelope from "./screens/Wallet_Envelope";
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -35,19 +32,17 @@ export default function App() {
   if (!loaded && !error) {
     return null;
   }
+  //yapoooooooo
 
   return (
-    // <View style={styles.container}>
-    //   <Text>我离开!</Text>
-    //   <StatusBar style="auto" />
-    // </View>
-    // <AppNav />
     <View style={styles.container}>
+    {/* //   <Text>我离开!</Text>
+    //   <StatusBar style="auto" />
+    // </View> */}
+      <AppNav />
+      {/* <Test /> */}
+      {/* <Wallet_Envelope /> */}
       {/* <Wallet_Home /> */}
-      {/* <Settings/>  */}
-      {/* <Settings_EditProfile/> */}
-      {/* <Settings_ChangePassword/>  */}
-      <Settings_FinancialHealth/>
     </View>
   );
 }
@@ -55,6 +50,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F9F9F9"
+    backgroundColor: '#F9F9F9'
   },
 });
