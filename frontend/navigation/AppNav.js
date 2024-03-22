@@ -11,6 +11,7 @@ import { View, StyleSheet, Image } from 'react-native';
 import Wallet_Home from '../screens/Wallet_Home';
 import Wallet_Envelope from '../screens/Wallet_Envelope';
 import Test from '../screens/Test';
+import Wallet_EnvelopeDebt from '../screens/Wallet_EnvelopeDebt';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -48,7 +49,7 @@ function AppNav() {
                     />
                     <Tab.Screen
                         name="Test"
-                        component={Test}
+                        component={Wallet_EnvelopeDebt}
                     />
                 </Tab.Navigator>
             </NavigationContainer>

@@ -13,7 +13,7 @@ function WalletEnvelopeOperation({OperationName, OperationDate, OperationAmount}
                 <View>
                     <View style={{flexDirection: 'row'}}>
                         <Text style={styles.textOperationName}>{OperationName}</Text>
-                        <Text style={styles.textOperationDate}>   -  {OperationDate}</Text>
+                        <Text style={styles.textOperationDate}>   |  {OperationDate}</Text>
                     </View>
 
                     <Text style={styles.textOperationAmount}>{OperationAmount}</Text>
