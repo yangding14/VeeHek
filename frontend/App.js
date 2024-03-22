@@ -8,6 +8,8 @@ import { colors } from "./styles/GlobalStyle";
 import AISelection from "./screens/AISelection";
 import SubscriptionModel from "./screens/SubscriptionModel";
 import DebtRepaymentPage from "./screens/DebtRepaymentPage";
+import BudgetEnvelopePage from "./screens/BudgetEnvelopePage";
+import SavedPlansPage from "./screens/SavedPlansPage";
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -44,7 +46,9 @@ export default function App() {
     <View style={styles.container}>
       {/* <AISelection/> */}
       {/* <SubscriptionModel /> */}
-      <DebtRepaymentPage />
+      {/* <DebtRepaymentPage /> */}
+      {/* <BudgetEnvelopePage /> */}
+      <SavedPlansPage />
       
     </View>
 
