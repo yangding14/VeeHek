@@ -56,7 +56,7 @@ export default function App() {
       {/* <LR_ForgotPassword/> */}
       {/* <LR_CheckEmail/> */}
       {/* <LR_PasswordChanged/> */}
-//       <DebtyBot/>
+{/* //       <DebtyBot/> */}
     {/* //   <Text>我离开!</Text>
     //   <StatusBar style="auto" />
     // </View> */}
