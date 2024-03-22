@@ -28,9 +28,9 @@ function Settings(props) {
 <Text style={{fontFamily:fonts.RubikRegular, fontSize:sh(20), color:colors.grey}}>
             More
         </Text>
-        <SettingsRow text={"About Us"} onPressSettingRow={onPressSettingRow}/>
-        <SettingsRow text={"Privacy Policy"} onPressSettingRow={onPressSettingRow}/>
-        <SettingsRow text={"Terms and Conditions"} onPressSettingRow={onPressSettingRow}/>
+        <SettingsRow text={"About Us"} onPressSettingRow={()=>onPressSettingRow("Settings_AboutUs")}/>
+        <SettingsRow text={"Privacy Policy"} onPressSettingRow={()=>onPressSettingRow("Settings_PrivacyPolicy")}/>
+        <SettingsRow text={"Terms and Conditions"} onPressSettingRow={()=>onPressSettingRow("Settings_TermsAndCon")}/>
         <SettingsRow text={"Logout"} onPressSettingRow={onPressSettingRow}/>
         </View>
     );

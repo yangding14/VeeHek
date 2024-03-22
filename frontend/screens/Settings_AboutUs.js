@@ -1,12 +1,16 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
 import { appStyles, sh, fonts } from '../styles/GlobalStyle';
+import { useNavigation } from '@react-navigation/native';
 
 function Settings_AboutUs(props) {
+    const navigation = useNavigation();
     return (
         <View style={appStyles.appBackground}>
             <View style = {{ flexDirection: 'row', alignItems: 'center',justifyContent: 'flex-start'}}>
-            <Image source={require('../assets/arrowLeft.png')} />
+            <TouchableWithoutFeedback hitSlop={40} onPress={() => navigation.goBack()}>
+                <Image source={require('../assets/arrow_left.png')} />
+            </TouchableWithoutFeedback>
             <Text style={{flex: 1, textAlign: 'center',fontFamily: fonts.RubikBold, fontSize: sh(20)}}>About Us</Text>
             </View>
 
