@@ -15,6 +15,7 @@ import LR_ForgotPassword from "./screens/LR_ForgotPassword";
 import LR_CheckEmail from "./screens/LR_CheckEmail";
 import LR_PasswordChanged from "./screens/LR_PasswordChanged";
 import DebtyBot from "./screens/DebtyBot";
+import Wallet_Envelope from "./screens/Wallet_Envelope";
 
 
 export default function App() {
@@ -55,7 +56,14 @@ export default function App() {
       {/* <LR_ForgotPassword/> */}
       {/* <LR_CheckEmail/> */}
       {/* <LR_PasswordChanged/> */}
-      <DebtyBot/>
+//       <DebtyBot/>
+    {/* //   <Text>我离开!</Text>
+    //   <StatusBar style="auto" />
+    // </View> */}
+      <AppNav />
+      {/* <Test /> */}
+      {/* <Wallet_Envelope /> */}
+      {/* <Wallet_Home /> */}
     </View>
   );
 }
@@ -63,6 +71,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F9F9F9"
+    backgroundColor: '#F9F9F9'
   },
 });
