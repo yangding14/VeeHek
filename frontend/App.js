@@ -8,6 +8,7 @@ import { colors } from "./styles/GlobalStyle";
 import  Settings from "./screens/Settings";
 import Settings_EditProfile from "./screens/Settings_EditProfile";
 import Settings_ChangePassword from "./screens/Settings_ChangePassword";
+import Settings_FinancialHealth from "./screens/Settings_FinancialHealth";
 
 export default function App() {
   const [loaded, error] = useFonts({
@@ -45,7 +46,8 @@ export default function App() {
       {/* <Wallet_Home /> */}
       {/* <Settings/>  */}
       {/* <Settings_EditProfile/> */}
-      <Settings_ChangePassword/> 
+      {/* <Settings_ChangePassword/>  */}
+      <Settings_FinancialHealth/>
     </View>
   );
 }
