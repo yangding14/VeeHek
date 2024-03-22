@@ -24,6 +24,9 @@ import { colors } from '../styles/GlobalStyle';
 import Settings_EditProfile from '../screens/Settings_EditProfile';
 import Settings_ChangePassword from '../screens/Settings_ChangePassword';
 import Settings_FinancialHealth from '../screens/Settings_FinancialHealth';
+import Settings_AboutUs from '../screens/Settings_AboutUs';
+import Settings_PrivacyPolicy from '../screens/Settings_PrivacyPolicy';
+import Settings_TermsAndCon from '../screens/Settings_TermsAndCon';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -77,6 +80,9 @@ function SettingTab(){
             <Stack.Screen name="Settings_EditProfile" component={Settings_EditProfile}/>
             <Stack.Screen name="Settings_ChangePassword" component={Settings_ChangePassword}/>
             <Stack.Screen name="Settings_FinancialHealth" component={Settings_FinancialHealth}/>
+            <Stack.Screen name="Settings_AboutUs" component={Settings_AboutUs}/>
+            <Stack.Screen name="Settings_PrivacyPolicy" component={Settings_PrivacyPolicy}/>
+            <Stack.Screen name="Settings_TermsAndCon" component={Settings_TermsAndCon}/>
         </Stack.Navigator>
     )
 }

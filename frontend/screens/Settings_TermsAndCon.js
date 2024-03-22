@@ -1,8 +1,10 @@
 import React from 'react';
-import { View, Text, Image, ScrollView } from "react-native";
+import { View, Text, Image, ScrollView, TouchableWithoutFeedback } from "react-native";
 import { appStyles, sh,sw, fonts } from "../styles/GlobalStyle";
+import { useNavigation } from '@react-navigation/native';
 
 function Settings_TermsAndCon(props) {
+  const navigation = useNavigation();
     return (
         <View style={appStyles.appBackground}>
             <View
@@ -12,7 +14,9 @@ function Settings_TermsAndCon(props) {
           justifyContent: "flex-start",
         }}
       >
-        <Image source={require("../assets/arrowLeft.png")} />
+        <TouchableWithoutFeedback hitSlop={40} onPress={() => navigation.goBack()}>
+          <Image source={require('../assets/arrow_left.png')} />
+        </TouchableWithoutFeedback>
         <Text style={{ flex: 1, textAlign: "center", fontFamily: fonts.RubikBold, fontSize: sh(20),paddingBottom:sh(10)}}>Terms and Condition</Text>
       </View>
       <View style = {{marginHorizontal: -sw(40)}}>
