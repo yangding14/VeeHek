@@ -5,7 +5,7 @@ import WalletEnvelopeTotalRemaining from '../components/WalletEnvelopeTotalRemai
 import WalletEnvelopeOperation from '../components/WalletEnvelopeOperation';
 import Wallet_EnvelopeNewOperation from './Wallet_EnvelopeNewOperation';
 
-function Wallet_Envelope() {
+function Wallet_Envelope({navigation}) {
 
     const [isVisible, setIsVisible] = useState(false);
 
@@ -29,8 +29,13 @@ function Wallet_Envelope() {
 
     return (
         <View style={appStyles.appBackground}>
-            <Image source={require('../assets/arrow_left.png')} style={{position: 'absolute', left: sw(50), top: sh(12)}} />
-            <Text style={{fontFamily: fonts.RubikBold, fontSize: sh(36), textAlign: 'center'}}>Food</Text>
+            <View style={{flexDirection: 'row'}}>
+                <TouchableWithoutFeedback hitSlop={40} onPress={() => navigation.goBack()}>
+                    <Image source={require('../assets/arrow_left.png')} style={{flex:1, resizeMode: 'contain', top: sh(14)}} />
+                </TouchableWithoutFeedback>
+                <Text style={{flex: 5, fontFamily: fonts.RubikBold, fontSize: sh(36), textAlign: 'center'}}>Food</Text>
+                <View style={{flex: 1}} />
+            </View>
 
             <View style={{marginHorizontal: sw(-40)}}>
                 <ScrollView style={{paddingHorizontal: sw(40)}}>
