@@ -28,7 +28,7 @@ function LR_CheckEmail(props) {
                             ref={inputRefs[index]}
                             placeholder=" "
                             placeholderTextColor="grey"
-                            style={{ fontFamily: 'YourFont', fontSize: 16, color: 'black', textAlign: 'center' }}
+                            style={{ fontFamily: fonts.PoppinsRegular, fontSize: 16, color: 'black', textAlign: 'center' }}
                             maxLength={1}
                             keyboardType="numeric"
                             onChangeText={(text) => {
