@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, Image, ScrollView, ImageBackground} from "react-native";
-import { appStyles, sh,sw, fonts, colors } from "../styles/GlobalStyle";
+import { View, Image} from "react-native";
 
 function SplashPage(props) {
     return (
