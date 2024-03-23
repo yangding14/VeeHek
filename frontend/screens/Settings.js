@@ -31,7 +31,7 @@ function Settings(props) {
         <SettingsRow text={"About Us"} onPressSettingRow={()=>onPressSettingRow("Settings_AboutUs")}/>
         <SettingsRow text={"Privacy Policy"} onPressSettingRow={()=>onPressSettingRow("Settings_PrivacyPolicy")}/>
         <SettingsRow text={"Terms and Conditions"} onPressSettingRow={()=>onPressSettingRow("Settings_TermsAndCon")}/>
-        <SettingsRow text={"Logout"} onPressSettingRow={onPressSettingRow}/>
+        <SettingsRow text={"Logout"} onPressSettingRow={() => onPressSettingRow("Login")}/>
         </View>
     );
 }

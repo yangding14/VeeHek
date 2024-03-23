@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import { View, Text, StyleSheet, Image, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
-import { appStyles, colors, fonts, sh } from '../styles/GlobalStyle';
+import { appStyles, colors, fonts, sh, sw } from '../styles/GlobalStyle';
 import { useNavigation } from '@react-navigation/native';
 
 function Settings_FinancialHealth(props) {
@@ -136,11 +136,11 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     shadow: {
-        shadowColor: '#171717',
-        shadowOffset: {width: -10, height: 2},
-        shadowOpacity: 0.2,
-        shadowRadius: 1,
-        elevation: 3,
+        shadowRadius: sw(4), //for ios
+        shadowColor:colors.black, //for ios
+        shadowOpacity: 0.12, //for ios
+        shadowOffset:{height: sh(1)}, //for ios
+        elevation: 2 //for android
       },
     bodyText:{
         fontFamily:fonts.InterBold,
