@@ -21,7 +21,7 @@ function DebtHomeDetailsModalDetails({data, currentIndex}) {
             <Field fieldName='Amount Borrowed' field={data[currentIndex].amountBorrowed} />
             <Field fieldName='Interest Rate' field={data[currentIndex].interestRate} />
             <Field fieldName='Repayment Period' field={data[currentIndex].repaymentPeriod} />
-            <Field fieldName='Monthly Payment' field={data[currentIndex].monthlyPayment} />
+            <Field fieldName='Monthly Payment' field={data[currentIndex].monthlyRepayment} />
             <Field fieldName='Total Interest Paid' field={data[currentIndex].totalInterestPaid} />
             <Field fieldName='Total Repaid' field={data[currentIndex].totalRepaid} />
             

@@ -36,7 +36,6 @@ import SavedPlansPage from '../screens/SavedPlansPage';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
-const test = createBottomTabNavigator();
 
 // Set default options for all screens within the Stack.Navigator
 const screenOptions = {
@@ -70,97 +69,82 @@ const navTheme = {
 function AppNav() {
     return (
         <View style={styles.container}>
-            <NavigationContainer theme={navTheme}>
-                <Tab.Navigator initialRouteName='Home' screenOptions={screenOptions}>
-                    <Tab.Screen
-                        name="Home"
-                        component={HomeTab}
-                        initialParams={{name: 'Song Jun'}}
-                        options={{
-                            tabBarIcon: ({ focused }) => {
-                                return (
-                                    <>
-                                        <Image
-                                            source={focused ? require('../assets/home_focused.png') : require('../assets/home_unfocused.png')}
-                                            style={styles.icon}
-                                        />
-                                        <Text style={focused ? styles.textFocused : styles.textUnfocused}>Home</Text>
-                                    </>
-                                )
-                            }
-                        }}
-                    />
-                    <Tab.Screen
-                        name="Debt"
-                        component={DebtTab}
-                        options={{
-                            tabBarIcon: ({ focused }) => {
-                                return (
-                                    <>
-                                        <Image
-                                            source={focused ? require('../assets/list_focused.png') : require('../assets/list_unfocused.png')}
-                                            style={styles.icon}
-                                        />
-                                        <Text style={focused ? styles.textFocused : styles.textUnfocused}>Debt</Text>
-                                    </>
-                                )
-                            }
-                        }}
-                    />
-                    <Tab.Screen
-                        name="Settings"
-                        component={SettingTab}
-                        options={{
-                            tabBarIcon: ({ focused }) => {
-                                return (
-                                    <>
-                                        <Image
-                                            source={focused ? require('../assets/profile_focused.png') : require('../assets/profile_unfocused.png')}
-                                            style={styles.icon}
-                                        />
-                                        <Text style={focused ? styles.textFocused : styles.textUnfocused}>Settings</Text>
-                                    </>
-                                )
-                            }
-                        }}
-                    />
+            <Tab.Navigator initialRouteName='Home' screenOptions={screenOptions}>
+                <Tab.Screen
+                    name="Home"
+                    component={HomeTab}
+                    initialParams={{name: 'Song Jun'}}
+                    options={{
+                        tabBarIcon: ({ focused }) => {
+                            return (
+                                <>
+                                    <Image
+                                        source={focused ? require('../assets/home_focused.png') : require('../assets/home_unfocused.png')}
+                                        style={styles.icon}
+                                    />
+                                    <Text style={focused ? styles.textFocused : styles.textUnfocused}>Home</Text>
+                                </>
+                            )
+                        }
+                    }}
+                />
+                <Tab.Screen
+                    name="Debt"
+                    component={DebtTab}
+                    options={{
+                        tabBarIcon: ({ focused }) => {
+                            return (
+                                <>
+                                    <Image
+                                        source={focused ? require('../assets/list_focused.png') : require('../assets/list_unfocused.png')}
+                                        style={styles.icon}
+                                    />
+                                    <Text style={focused ? styles.textFocused : styles.textUnfocused}>Debt</Text>
+                                </>
+                            )
+                        }
+                    }}
+                />
+                <Tab.Screen
+                    name="Settings"
+                    component={SettingTab}
+                    options={{
+                        tabBarIcon: ({ focused }) => {
+                            return (
+                                <>
+                                    <Image
+                                        source={focused ? require('../assets/profile_focused.png') : require('../assets/profile_unfocused.png')}
+                                        style={styles.icon}
+                                    />
+                                    <Text style={focused ? styles.textFocused : styles.textUnfocused}>Settings</Text>
+                                </>
+                            )
+                        }
+                    }}
+                />
 
-                    <Tab.Screen
-                        name="AI"
-                        component={AISelectionTab}
-                        options={{
-                            tabBarIcon: ({ focused }) => {
-                                return (
-                                    <>
-                                        <Image
-                                            source={focused ? require('../assets/robotIcon_focused.png') : require('../assets/robotIcon.png')}
-                                            style={styles.icon}
-                                        />
-                                        <Text style={focused ? styles.textFocused : styles.textUnfocused}>AI Ally</Text>
-                                    </>
-                                )
-                            }
-                        }}
-                    />
-                </Tab.Navigator>
-            </NavigationContainer>
+                <Tab.Screen
+                    name="AI"
+                    component={AISelectionTab}
+                    options={{
+                        tabBarIcon: ({ focused }) => {
+                            return (
+                                <>
+                                    <Image
+                                        source={focused ? require('../assets/robotIcon_focused.png') : require('../assets/robotIcon.png')}
+                                        style={styles.icon}
+                                    />
+                                    <Text style={focused ? styles.textFocused : styles.textUnfocused}>AI Ally</Text>
+                                </>
+                            )
+                        }
+                    }}
+                />
+            </Tab.Navigator>
         </View>
     );
 }
 
-function AISelectionTab(){
-    return(
-        <Stack.Navigator screenOptions = {screenOptions}>
-            <Stack.Screen name = "AISelection" component={AISelection}/>
-            <Stack.Screen name = "SubscriptionModel" component={SubscriptionModel}/>
-            <Stack.Screen name = "SavedPlansPage" component={SavedPlansPage}/> 
-            <Stack.Screen name = "DebtRepaymentPage" component={DebtRepaymentPage}/> 
-            <Stack.Screen name = "BudgetEnvelopePage" component={BudgetEnvelopePage}/> 
-
-
-        </Stack.Navigator>
-    )
-}
 
 function HomeTab(){
     return(
@@ -193,6 +177,20 @@ function SettingTab(){
         </Stack.Navigator>
     )
 }
+
+function AISelectionTab(){
+    return(
+        <Stack.Navigator screenOptions = {screenOptions}>
+            <Stack.Screen name = "AISelection" component={AISelection}/>
+            <Stack.Screen name = "SubscriptionModel" component={SubscriptionModel}/>
+            <Stack.Screen name = "SavedPlansPage" component={SavedPlansPage}/> 
+            <Stack.Screen name = "DebtRepaymentPage" component={DebtRepaymentPage}/> 
+            <Stack.Screen name = "BudgetEnvelopePage" component={BudgetEnvelopePage}/> 
+
+
+        </Stack.Navigator>
+    )
+} 
 
 const styles = StyleSheet.create({
   container: {

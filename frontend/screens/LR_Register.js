@@ -3,6 +3,14 @@ import { View ,Text , Image, TextInput, TouchableOpacity} from 'react-native';
 import { sh, sw, fonts, colors } from '../styles/GlobalStyle';
 
 function LR_Register(props) {
+    const handleLogin = () => {
+        // Add your login logic here
+        // Navigate to 'Wallet_Home' screen
+        props.navigation.navigate('Login');
+    };
+    const handleRegister = () => {
+        props.navigation.navigate('SETUP_Expenses');
+    };
     return (
         <View style={{flex:1}}>
             <Image source={require('../assets/RegisterBg.png')} style ={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}} />
@@ -26,7 +34,7 @@ function LR_Register(props) {
                 </View>
                 <View style = {{marginTop: sh(40), flexDirection: 'row', alignContent:'center', alignItems: 'center',justifyContent: 'flex-end'}}>
                 <Text style = {{textAlign: 'right',fontFamily : fonts.PoppinsRegular , fontSize : sh(16), color: 'white'}}>Already a member? 
-                    <TouchableOpacity onPress={handleLogin}>
+                    <TouchableOpacity hitSlop={50} onPress={handleLogin}>
                     <Text style = {{textDecorationLine: 'underline',color: colors.yellow, fontSize : sh(16)}}>   Login</Text>
                     </TouchableOpacity></Text>
                 </View>
@@ -34,21 +42,7 @@ function LR_Register(props) {
         </View>
     );
 
-    const handleLogin = () => {
-        // Add your login logic here
-        // Navigate to 'Wallet_Home' screen
-        props.navigation.navigate('Wallet_Home');
-    };
-
-    const handleForgotPassword = () => {
-        // Add your registration logic here
-        // Navigate to 'LR_Register' screen
-        props.navigation.navigate('LR_Register');
-    };
-    const handleRegister = () => {
-
-        props.navigation.navigate('LR_Register');
-    };
+    
 }
 
 export default LR_Register;

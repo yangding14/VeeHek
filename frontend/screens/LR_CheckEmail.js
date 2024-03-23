@@ -10,10 +10,20 @@ function LR_CheckEmail(props) {
             inputRefs[index + 1].current.focus();
         }
     };
+
+    const handleVerifyCode = () => {
+        props.navigation.navigate('LR_PasswordChanged');
+    };
+    const handleBack = () => {
+        props.navigation.goBack();
+    }
+
     return (
         <View style={{flex:1}}>
             <Image source={require('../assets/ForgotPwBg.png')} style ={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}} />
-            <Image source={require('../assets/backButton.png')} style ={{ top: sh(50), left: sw(20)}} />
+            <TouchableOpacity onPress={handleBack}>
+                <Image source={require('../assets/backButton.png')} style ={{ top: sh(50), left: sw(20)}} />
+            </TouchableOpacity>
             
             <View style = {{ alignItems: 'flex-start',justifyContent: 'flex-start',marginHorizontal: sw(40),marginTop: sh(80)}}>
                 <Text style = {{fontFamily : fonts.PoppinsBold , fontSize : sh(20), color: 'black', marginBottom:sh(10)}}>Check Your Email</Text>
@@ -54,9 +64,7 @@ function LR_CheckEmail(props) {
         </View>
     );
 
-    const handleVerifyCode = () => {
-        props.navigation.navigate('LR_Register');
-    };
+    
 }
 
 export default LR_CheckEmail;

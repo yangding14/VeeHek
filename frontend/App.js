@@ -16,6 +16,7 @@ import LR_CheckEmail from "./screens/LR_CheckEmail";
 import LR_PasswordChanged from "./screens/LR_PasswordChanged";
 import DebtyBot from "./screens/DebtyBot";
 import Wallet_Envelope from "./screens/Wallet_Envelope";
+import AuthNav from "./navigation/AuthNav";
 
 
 
@@ -61,7 +62,8 @@ export default function App() {
     {/* //   <Text>我离开!</Text>
     //   <StatusBar style="auto" />
     // </View> */}
-      <AppNav />
+      {/* <AppNav /> */}
+      <AuthNav />
     
       {/* <Test /> */}
       {/* <Wallet_Envelope /> */}
