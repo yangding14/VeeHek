@@ -51,16 +51,45 @@ function AppNav() {
                     <Tab.Screen
                         name="Home"
                         component={HomeTab}
-                        options={{title: 'Wallet Home'}}
                         initialParams={{name: 'Song Jun'}}
+                        options={{
+                            tabBarIcon: ({ focused }) => {
+                                return (
+                                    <Image
+                                        source={focused ? require('../assets/home_focused.png') : require('../assets/home_unfocused.png')}
+                                        style={{width: 30, height: 30}}
+                                    />
+                                )
+                            }
+                        }}
                     />
                     <Tab.Screen
                         name="Debt"
                         component={DebtTab}
+                        options={{
+                            tabBarIcon: ({ focused }) => {
+                                return (
+                                    <Image
+                                        source={focused ? require('../assets/list_focused.png') : require('../assets/list_unfocused.png')}
+                                        style={{width: 30, height: 30}}
+                                    />
+                                )
+                            }
+                        }}
                     />
                     <Tab.Screen
                         name="Settings"
                         component={SettingTab}
+                        options={{
+                            tabBarIcon: ({ focused }) => {
+                                return (
+                                    <Image
+                                        source={focused ? require('../assets/profile_focused.png') : require('../assets/profile_unfocused.png')}
+                                        style={{width: 30, height: 30}}
+                                    />
+                                )
+                            }
+                        }}
                     />
                 </Tab.Navigator>
             </NavigationContainer>
