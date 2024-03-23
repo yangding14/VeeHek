@@ -1,20 +1,25 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
 import { colors, fonts, sh, sw } from '../styles/GlobalStyle';
 
-function DebtHomeCard({debtName, debtAmount, debtDate}) {
+function DebtHomeCard({index, debtName, debtAmount, onPress}) {
+    const colorList = [colors.redLight, colors.yellowLight, colors.greenLight, colors.purpleLight]
+
     return (
         <View style={styles.bg}>
-            <View style={{flexDirection: 'row'}}>
-                <Image source={require('../assets/food_themed.png')} style={styles.imgStyle} />
+            <TouchableWithoutFeedback onPress={onPress}>
+                <View style={{flexDirection: 'row'}}>
+                    {/* circle eclipse filled view */}
+                    <View style={{backgroundColor: colorList[(index) % 4], height: sh(40), width: undefined, aspectRatio: 1, borderRadius: sh(20), marginRight: sw(20)}} />
 
-                
-                <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', flex: 1}}>
-                    <Text style={styles.textOperationName}>{debtName}</Text>
-                    <Text style={styles.textOperationDate}>{debtAmount}</Text>
+                    
+                    <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', flex: 1}}>
+                        <Text style={styles.textOperationName}>{debtName}</Text>
+                        <Text style={styles.textOperationDate}>{debtAmount}</Text>
+                    </View>
+                    
                 </View>
-                
-            </View>
+            </TouchableWithoutFeedback>
 
         </View>
     );

@@ -133,7 +133,7 @@ function AppNav() {
                                 return (
                                     <>
                                         <Image
-                                            source={focused ? require('../assets/robotIcon.png') : require('../assets/robotIcon.png')}
+                                            source={focused ? require('../assets/robotIcon_focused.png') : require('../assets/robotIcon.png')}
                                             style={styles.icon}
                                         />
                                         <Text style={focused ? styles.textFocused : styles.textUnfocused}>AI Ally</Text>

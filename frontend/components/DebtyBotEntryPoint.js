@@ -12,7 +12,7 @@ function DebtyBotEntryPoint({navigation}) {
 
     return (
         <View style={{ position: 'absolute', top: sh(-30) ,right: sw(-30) }}>
-            <TouchableOpacity onPress={onPressEnvelope}>
+            <TouchableOpacity hitSlop={40} onPress={onPressEnvelope}>
                 <Image source={require('../assets/logo.png')} style={{width: 100, height: 100}} />
             </TouchableOpacity>
 
