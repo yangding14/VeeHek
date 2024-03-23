@@ -5,16 +5,13 @@ import SetupExpensesCard from '../components/SetupExpensesCard';
 
 function SETUP_Expenses(props) {
     const onPress = () => {
-        console.log('Expense card pressed');
     }
 
     const handleNext = () => {
-        console.log('Next pressed');
         props.navigation.navigate('SETUP_Debts');  
     }
 
     const handleNewCategory = () => {
-        console.log('New category pressed');
         props.navigation.navigate('SetupExpensesNew');
     }
 

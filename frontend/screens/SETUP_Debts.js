@@ -5,24 +5,18 @@ import DebtHomeCard from '../components/DebtHomeCard';
 import Setup_DebtsDetails from './Setup_DebtsDetails';
 
 function SETUP_Debts(props) {
-    const onPress = () => {
-        console.log('Expense card pressed');
-    }
-
     const handleFinish = () => {
-        console.log('Next pressed');
         props.navigation.navigate('AppMain');
     }
 
     const handleNewCategory = () => {
-        console.log('New category pressed');
+        props.navigation.navigate('SetupDebtsNew');
     }
 
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const toggleModalVisibility = (index) => {
-        console.log('Toggle modal visibility', index);
         setCurrentIndex(index);
         setIsModalVisible(true);
     };
