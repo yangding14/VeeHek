@@ -39,8 +39,8 @@ const screenOptions = {
 
 const navTheme = {
     colors:{
-                    background: colors.bgWhite
-                }
+        background: colors.bgWhite
+    }
 }
 
 function AppNav() {
@@ -53,6 +53,10 @@ function AppNav() {
                         component={HomeTab}
                         options={{title: 'Wallet Home'}}
                         initialParams={{name: 'Song Jun'}}
+                    />
+                    <Tab.Screen
+                        name="Debt"
+                        component={DebtTab}
                     />
                     <Tab.Screen
                         name="Settings"
@@ -70,6 +74,14 @@ function HomeTab(){
             <Stack.Screen name="Wallet_Home" component={Wallet_Home} />
             <Stack.Screen name="Wallet_Envelope" component={Wallet_Envelope} />
             <Stack.Screen name="Wallet_EnvelopeDebt" component={Wallet_EnvelopeDebt} />
+        </Stack.Navigator>
+    )
+}
+
+function DebtTab(){
+    return(
+        <Stack.Navigator screenOptions={screenOptions}>
+            <Stack.Screen name="Test" component={Test} />
         </Stack.Navigator>
     )
 }
