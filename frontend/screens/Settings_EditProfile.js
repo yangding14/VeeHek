@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TextInput, FlatList, ScrollView, TouchableOpacity,TouchableWithoutFeedback } from 'react-native';
-import { appStyles,sh,fonts,colors } from '../styles/GlobalStyle';
+import { appStyles,sh,fonts,colors, sw } from '../styles/GlobalStyle';
 import Slider from '@react-native-community/slider';
 import EditProfileEnvelopes from '../components/EditProfileEnvelopes';
 import { useNavigation } from '@react-navigation/native';
@@ -23,14 +23,14 @@ function Settings_EditProfile(props) {
         { id: '9', source: require('../assets/iconFuel.png'), text: 'Fuel' }, 
       ];
     return (
-        <View style={appStyles.appBackground}>
+        <View style={[appStyles.appBackground, {marginHorizontal: sw(0)}]}>
             <View style={styles.header}>
             <TouchableWithoutFeedback hitSlop={40} onPress={() => navigation.goBack()}>
                     <Image source={require('../assets/arrow_left.png')} style={styles.backButton} />
                 </TouchableWithoutFeedback>
             <Text style={styles.headerText}>Edit Profile</Text>
             </View>
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView showsVerticalScrollIndicator={false} style={{paddingHorizontal: sw(40)}}>
             <View>
                 <Text style={styles.bodyText}>
                     Full Name
@@ -62,16 +62,20 @@ function Settings_EditProfile(props) {
         ))}
                 </View>
             </View>
+            
                 <Text style={styles.bodyText}>
                     Envelopes
                 </Text>
-                <FlatList
-                style={{marginBottom: sh(20)}}
-                data={data} 
-                numColumns={3}
-                keyExtractor={(item) => item.id} 
-                renderItem={({ item }) => (<EditProfileEnvelopes source={item.source} text={item.text} />)}
-                />
+                <View style={{marginHorizontal: sw(-30), alignItems: 'center'}}>
+                    <FlatList
+                    style={{marginBottom: sh(20)}}
+                    data={data} 
+                    numColumns={3}
+                    keyExtractor={(item) => item.id} 
+                    scrollEnabled={false}
+                    renderItem={({ item }) => (<EditProfileEnvelopes source={item.source} text={item.text} />)}
+                    />
+                </View>
                <TouchableOpacity
                 onPress={() => {}}
                 style={styles.button}
@@ -88,6 +92,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         marginBottom: sh(20),
+        paddingHorizontal: sw(40)
     },
     backButton: {
         resizeMode: 'contain',

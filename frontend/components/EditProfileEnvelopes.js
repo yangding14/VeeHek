@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image, StyleSheet,Text, TouchableOpacity} from 'react-native';
-import { sh,fonts,colors } from '../styles/GlobalStyle';
+import { sh,fonts,colors, sw } from '../styles/GlobalStyle';
 import { useState } from 'react';
 
 function EditProfileEnvelopes(props) {
@@ -36,11 +36,11 @@ const styles = StyleSheet.create({
         borderRadius: sh(10),
     },
     shadow: {
-        shadowColor: '#171717',
-        shadowOffset: {width: -10, height: 2},
-        shadowOpacity: 0.2,
-        shadowRadius: 1,
-        elevation: 3,
+        shadowRadius: sw(4), //for ios
+        shadowColor:colors.black, //for ios
+        shadowOpacity: 0.12, //for ios
+        shadowOffset:{height: sh(1)}, //for ios
+        elevation: 2 //for android
       },
       selected: {
         backgroundColor: colors.grey,
