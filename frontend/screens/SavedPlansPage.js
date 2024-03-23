@@ -1,13 +1,21 @@
 import React from 'react';
 import { appStyles,sw,sh, fonts, colors } from '../styles/GlobalStyle';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 function SavedPlansPage(props) {
+    const navigation = useNavigation();
+
+    const onPressBackButton = () => {
+        navigation.goBack();
+    }
+
     return (
         <View style = {appStyles.appBackground}>
             <View style = {{flexDirection: 'row', alignItems: 'center',gap: sw(20), alignSelf:'center'}}>
-        {/* TouchableOpacity for back button */}
+            <TouchableOpacity onPress={onPressBackButton}>
             <Image source={require('../assets/arrow-left.png')}/>
+            </TouchableOpacity>
             <Text style = {savedPlansPage.headerTitle}>Saved Plans</Text>
             </View>
             <View style = {savedPlansPage.box}>

@@ -1,9 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { View, Text, StyleSheet , Image, TouchableOpacity} from 'react-native';
 import {colors, fonts, sh, sw} from '../styles/GlobalStyle';
+import { useNavigation } from '@react-navigation/native';
+import DebtyBot from '../screens/DebtyBot';
 
 
 function MySubscriptionModel(props) {
+
+    const [modalVisible, setModalVisible] = useState(false);
+
+    const onPressChatBot = () => {
+        setModalVisible(true);
+    }
+
+
+
+    const navigation = useNavigation();
+
+    const onPressDebtRepaymentPlan = () => {
+        navigation.navigate('DebtRepaymentPage');
+    }
+
+    const onPressBudgetEnvelope = () => {
+        navigation.navigate('BudgetEnvelopePage');
+    }
+
     return (
         <View style= {box.mySubscriptionBox}>
             <Image style= {{width:70, height: 70}}source={require('../assets/DebtyFull.png')}/>
@@ -11,21 +32,20 @@ function MySubscriptionModel(props) {
             <Text style = {{fontFamily: fonts.PoppinsLight, fontSize: sh(14), color: colors.bgWhite}}>Placeholder of the description of the model will be over here</Text>
             <View style = {box.borderLine}/>
             <Text style = {{fontFamily: fonts.PoppinsLight, fontSize: sh(18), color: colors.bgWhite}}>Explore Me:</Text>
-            <TouchableOpacity style= {box.buttonCSS}>
-                        {/* onPress function waiting */}
+            <TouchableOpacity onPress={onPressDebtRepaymentPlan} style= {box.buttonCSS}>
                         <Text style={box.buttonText}>Generate Debt Repayment Plan</Text>
                         <Image source={require('../assets/whiteBg-arrow-right.png')}/>
                     </TouchableOpacity>
-                    <TouchableOpacity style= {box.buttonCSS}>
+                    <TouchableOpacity onPress={onPressBudgetEnvelope} style= {box.buttonCSS}>
                         {/* onPress function waiting */}
                         <Text style={box.buttonText}>Generate Budget Envelope</Text>
                         <Image source={require('../assets/whiteBg-arrow-right.png')}/>
                     </TouchableOpacity>
-                    <TouchableOpacity style= {box.buttonCSS}>
-                        {/* onPress function waiting */}
+                    <TouchableOpacity onPress={onPressChatBot} style= {box.buttonCSS}>
                         <Text style={box.buttonText}>24/7 Financial Advisor Chatbot</Text>
                         <Image source={require('../assets/whiteBg-arrow-right.png')}/>
                     </TouchableOpacity>
+                    <DebtyBot modalVisible = {modalVisible} setModalVisible = {setModalVisible}/>
                     <View style = {{padding: sh(20)}}/>
         </View>
         

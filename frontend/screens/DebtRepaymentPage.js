@@ -2,8 +2,16 @@ import React, {useState} from 'react';
 import { TextInput ,Text, StyleSheet, View, Image ,TouchableOpacity, Modal} from 'react-native';
 import {appStyles, colors, fonts, sh, sw} from '../styles/GlobalStyle';
 import DebtRepaymentBox from '../components/DebtRepaymentBox';
+import { useNavigation } from '@react-navigation/native';
 
 function DebtRepaymentPage(props) {
+
+    const navigation = useNavigation();
+
+    const onPressBackButton = () => {
+        navigation.goBack();
+    }
+
     const [modalVisible, setModalVisible] = useState(false);
 
     const toggleModal = () => {
@@ -13,8 +21,9 @@ function DebtRepaymentPage(props) {
     return (
         <View style= {appStyles.appBackground}>
             <View style = {{flexDirection: 'row', alignItems: 'center',gap: sw(20), alignSelf:'center'}}>
-        {/* TouchableOpacity for back button */}
+            <TouchableOpacity onPress={onPressBackButton}>
             <Image source={require('../assets/arrow-left.png')}/>
+            </TouchableOpacity>
             <Text style = {debtPage.headerTitle}>Model Name</Text>
             </View>
             <DebtRepaymentBox/>

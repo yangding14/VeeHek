@@ -1,13 +1,23 @@
 import React from 'react';
 import { appStyles,fonts, sh, sw, colors } from '../styles/GlobalStyle';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 function BudgetEnvelopePage(props) {
+
+
+    const navigation = useNavigation();
+
+    const onPressBackButton = () => {
+        navigation.goBack();
+    }
+    
     return (
         <View style = {appStyles.appBackground}>
             <View style = {{flexDirection: 'row', alignItems: 'center',gap: sw(20), alignSelf:'center'}}>
-        {/* TouchableOpacity for back button */}
+       <TouchableOpacity onPress={onPressBackButton}>
             <Image source={require('../assets/arrow-left.png')}/>
+            </TouchableOpacity>
             <Text style = {envelopePage.headerTitle}>Model Name</Text>
             </View>
             <View style = {envelopePage.box}>

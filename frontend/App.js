@@ -18,6 +18,7 @@ import DebtyBot from "./screens/DebtyBot";
 import Wallet_Envelope from "./screens/Wallet_Envelope";
 
 
+
 export default function App() {
   const [loaded, error] = useFonts({
     PoppinsLight: require("./assets/fonts/Poppins-Light.ttf"),
@@ -61,6 +62,7 @@ export default function App() {
     //   <StatusBar style="auto" />
     // </View> */}
       <AppNav />
+    
       {/* <Test /> */}
       {/* <Wallet_Envelope /> */}
       {/* <Wallet_Home /> */}

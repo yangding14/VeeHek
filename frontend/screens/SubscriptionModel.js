@@ -3,24 +3,36 @@ import { Text, StyleSheet, View, Image ,TouchableOpacity} from 'react-native';
 import {appStyles, colors, fonts, sh, sw} from '../styles/GlobalStyle';
 import MySubscriptionModelBoxView from '../components/MySubscriptionModelBoxView';
 import MySubscriptionPlans from '../components/MySubscriptionPlans';
+import { useNavigation } from '@react-navigation/native';
 
 function SubscriptionModel(props) {
+
+const navigation = useNavigation();
+
+const onPressSavedPlan = () => {
+    navigation.navigate('SavedPlansPage')
+}
+
+const onPressBackButton = () => {
+    navigation.goBack();
+}
     return (
         <View style= {appStyles.appBackground}>
             <View style = {{flexDirection: 'row', alignItems: 'center',gap: sw(20), alignSelf:'center'}}>
-        {/* TouchableOpacity for back button */}
+            <TouchableOpacity onPress={onPressBackButton}>
             <Image source={require('../assets/arrow-left.png')}/>
+            </TouchableOpacity>
             <Text style = {mySubscriptionStyles.headerTitle}>My Subscriptions</Text>
             </View>
 
             <MySubscriptionModelBoxView/>
 
-            <TouchableOpacity style= {mySubscriptionStyles.saveButton}>
-                        {/* onPress function waiting */}
+            <TouchableOpacity onPress={onPressSavedPlan} style= {mySubscriptionStyles.saveButton}>
+                        
                         <Text style = {{fontFamily: fonts.PoppinsSemiBold, fontSize: sh(14)}}>Saved Plans</Text>
             </TouchableOpacity>
 
-            <MySubscriptionPlans/>    
+            {/* <MySubscriptionPlans/>     */}
    
             </View>
             
