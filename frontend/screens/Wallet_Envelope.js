@@ -4,6 +4,7 @@ import { appStyles, colors, fonts, sh, sw } from '../styles/GlobalStyle';
 import WalletEnvelopeTotalRemaining from '../components/WalletEnvelopeTotalRemaining';
 import WalletEnvelopeOperation from '../components/WalletEnvelopeOperation';
 import Wallet_EnvelopeNewOperation from './Wallet_EnvelopeNewOperation';
+import DebtyBotEntryPoint from '../components/DebtyBotEntryPoint';
 
 function Wallet_Envelope({navigation}) {
 
@@ -58,27 +59,29 @@ function Wallet_Envelope({navigation}) {
                 </ScrollView>
             </View>
             <TouchableWithoutFeedback onPress={() => setIsVisible(true)}>
-                        <View 
-                            style={{
-                                width: '100%',
-                                height: sh(60),
-                                backgroundColor: colors.redLight,
-                                borderRadius: sh(20),
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                position: 'absolute',
-                                bottom: sh(46),
-                                left: sw(0),
+                <View 
+                    style={{
+                        width: '100%',
+                        height: sh(60),
+                        backgroundColor: colors.redLight,
+                        borderRadius: sh(20),
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        position: 'absolute',
+                        bottom: sh(46),
+                        left: sw(0),
 
-                                shadowRadius: sw(4), //for ios
-                                shadowColor:colors.black, //for ios
-                                shadowOpacity: 0.12, //for ios
-                                shadowOffset:{height: sh(1)}, //for ios
-                                elevation: 2 //for android
-                        }}>
-                            <Text style={{fontFamily: fonts.PoppinsBold, fontSize: sh(20), color: colors.white}}>New Operation</Text>
-                        </View>
-                    </TouchableWithoutFeedback>
+                        shadowRadius: sw(4), //for ios
+                        shadowColor:colors.black, //for ios
+                        shadowOpacity: 0.12, //for ios
+                        shadowOffset:{height: sh(1)}, //for ios
+                        elevation: 2 //for android
+                }}>
+                    <Text style={{fontFamily: fonts.PoppinsBold, fontSize: sh(20), color: colors.white}}>New Operation</Text>
+                </View>
+            </TouchableWithoutFeedback>
+
+            <DebtyBotEntryPoint />
         </View>
     );
 }
