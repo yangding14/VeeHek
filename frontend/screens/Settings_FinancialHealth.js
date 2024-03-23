@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 function Settings_FinancialHealth(props) {
     const navigation = useNavigation();
-    const [point, setPoint] = useState(60);
+    const [point, setPoint] = useState(40);
     const [addPoint, setAddPoint] = useState(10);
     const [spending, setSpending] = useState(50);
     const [debts, setDebts] = useState(25);
