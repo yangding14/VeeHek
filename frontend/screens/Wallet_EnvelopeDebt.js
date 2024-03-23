@@ -3,6 +3,7 @@ import { View, Text, Image, TouchableWithoutFeedback, ScrollView, StyleSheet } f
 import { appStyles, colors, fonts, sh, sw } from '../styles/GlobalStyle';
 import WalletEnvelopeTotalRemaining from '../components/WalletEnvelopeTotalRemaining';
 import WalletEnvelopeDebt from '../components/WalletEnvelopeDebt';
+import DebtyBotEntryPoint from '../components/DebtyBotEntryPoint';
 
 function Wallet_EnvelopeDebt({navigation}) {
     const [isChecked, setIsChecked] = useState(false);
@@ -57,6 +58,8 @@ function Wallet_EnvelopeDebt({navigation}) {
 
                 </ScrollView>
             </View>
+
+            <DebtyBotEntryPoint />
 
         </View>
     );

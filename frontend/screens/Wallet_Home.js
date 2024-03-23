@@ -5,6 +5,7 @@ import WalletHomeTotalRemaining from '../components/WalletHomeTotalRemaining';
 import WalletHomeRow from '../components/WalletHomeRow';
 import WalletHomeEnvelope from '../components/WalletHomeEnvelope';
 import { useNavigation } from '@react-navigation/native';
+import DebtyBotEntryPoint from '../components/DebtyBotEntryPoint';
 
 function Wallet_Home(props) {
     const navigation = useNavigation();
@@ -58,6 +59,9 @@ function Wallet_Home(props) {
                     // contentContainerStyle={{ paddingHorizontal: sw(30) }}
                 />
             </ScrollView>
+
+            <DebtyBotEntryPoint />
+
         </View>
     );
 }

@@ -6,7 +6,6 @@ function WalletEnvelopeDebt({DebtName, DebtDate, DebtAmount, isChecked}) {
     const [checked, setChecked] = useState(isChecked);
 
     const handlePress = () => {
-        console.log('Debt is pressed');
         setChecked(!checked); // Toggle the checked state
     }
     

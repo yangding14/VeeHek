@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { ScrollView, KeyboardAvoidingView, TextInput, Image, Alert, Modal, StyleSheet, Text, Pressable, View } from 'react-native';
 import { colors , fonts, sw, sh} from '../styles/GlobalStyle';
 
-const App = () => {
-  const [modalVisible, setModalVisible] = useState(false);
+const DebtyBot = ({modalVisible, setModalVisible}) => {
   const [message, setMessage] = useState('');
   const [chatMessages, setChatMessages] = useState([
     { text: 'Hi! I am DebtyBot. How can I help you today?', sender: 'bot' },
@@ -42,7 +41,6 @@ const App = () => {
   }
 
   return (
-    <View style={styles.container}>
       <Modal
         animationType="slide"
         transparent={true}
@@ -101,12 +99,6 @@ const App = () => {
           </View>
         
       </Modal>
-      <Pressable
-        style={[styles.openButton]}
-        onPress={() => setModalVisible(true)}>
-        <Text style={styles.openButtonText}>Hey DebtyBot</Text>
-      </Pressable>
-    </View>
   );
 };
 
@@ -115,8 +107,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
-    marginBottom: sh(100),
-    marginEnd: sw(50),
+    
   },
   modalContainer: {
     flex: 1,
@@ -164,4 +155,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default DebtyBot;
