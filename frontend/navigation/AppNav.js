@@ -28,6 +28,11 @@ import Settings_FinancialHealth from '../screens/Settings_FinancialHealth';
 import Settings_AboutUs from '../screens/Settings_AboutUs';
 import Settings_PrivacyPolicy from '../screens/Settings_PrivacyPolicy';
 import Settings_TermsAndCon from '../screens/Settings_TermsAndCon';
+import AISelection from '../screens/AISelection';
+import SubscriptionModel from '../screens/SubscriptionModel';
+import DebtRepaymentPage from '../screens/DebtRepaymentPage';
+import BudgetEnvelopePage from '../screens/BudgetEnvelopePage';
+import SavedPlansPage from '../screens/SavedPlansPage';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -119,10 +124,42 @@ function AppNav() {
                             }
                         }}
                     />
+
+                    <Tab.Screen
+                        name="AI"
+                        component={AISelectionTab}
+                        options={{
+                            tabBarIcon: ({ focused }) => {
+                                return (
+                                    <>
+                                        <Image
+                                            source={focused ? require('../assets/robotIcon.png') : require('../assets/robotIcon.png')}
+                                            style={styles.icon}
+                                        />
+                                        <Text style={focused ? styles.textFocused : styles.textUnfocused}>AI Ally</Text>
+                                    </>
+                                )
+                            }
+                        }}
+                    />
                 </Tab.Navigator>
             </NavigationContainer>
         </View>
     );
+}
+
+function AISelectionTab(){
+    return(
+        <Stack.Navigator screenOptions = {screenOptions}>
+            <Stack.Screen name = "AISelection" component={AISelection}/>
+            <Stack.Screen name = "SubscriptionModel" component={SubscriptionModel}/>
+            <Stack.Screen name = "SavedPlansPage" component={SavedPlansPage}/> 
+            <Stack.Screen name = "DebtRepaymentPage" component={DebtRepaymentPage}/> 
+            <Stack.Screen name = "BudgetEnvelopePage" component={BudgetEnvelopePage}/> 
+
+
+        </Stack.Navigator>
+    )
 }
 
 function HomeTab(){

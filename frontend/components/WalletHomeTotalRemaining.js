@@ -9,9 +9,9 @@ function WalletHomeTotalRemaining(props) {
                 <Text style={styles.textMonth}>March 2024</Text>
                 <Text style={styles.textTotalRemaining}>- Total Remaining:</Text>
             </View>
-
+            
             <Text style={styles.textCurrentRemaining}>RM 3,578</Text>
-
+            
             <View style={styles.progressBarBg} />
             <View style={styles.progressBar} />
 

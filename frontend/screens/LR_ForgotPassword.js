@@ -6,7 +6,7 @@ function LR_ForgotPassword(props) {
     return (
         <View style={{flex:1}}>
             <Image source={require('../assets/ForgotPwBg.png')} style ={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}} />
-            <Image source={require('../assets/BackButton.png')} style ={{ top: sh(50), left: sw(20)}} />
+            <Image source={require('../assets/backButton.png')} style ={{ top: sh(50), left: sw(20)}} />
             
             <View style = {{ alignItems: 'flex-start',justifyContent: 'flex-start',marginHorizontal: sw(40),marginTop: sh(80)}}>
                 <Text style = {{fontFamily : fonts.PoppinsBold , fontSize : sh(25), color: 'black', marginBottom: sh(10)}}>Forgot Password</Text>
