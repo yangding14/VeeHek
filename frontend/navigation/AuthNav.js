@@ -13,6 +13,8 @@ import LR_PasswordChanged from '../screens/LR_PasswordChanged';
 import LR_Register from '../screens/LR_Register';
 import SETUP_Expenses from '../screens/SETUP_Expenses';
 import SETUP_Debts from '../screens/SETUP_Debts';
+import SetupExpensesNew from '../screens/SetupExpensesNew';
+import SetupDebtsNew from '../screens/SetupDebtsNew';
 
 const Stack = createStackNavigator();
 
@@ -59,6 +61,10 @@ function Register(){
             <Stack.Screen name="LR_Register" component={LR_Register} />
             <Stack.Screen name="SETUP_Expenses" component={SETUP_Expenses} />
             <Stack.Screen name="SETUP_Debts" component={SETUP_Debts} />
+            <Stack.Group screenOptions={{ presentation: 'modal' }}> 
+                <Stack.Screen name="SetupExpensesNew" component={SetupExpensesNew}  />
+                <Stack.Screen name="SetupDebtsNew" component={SetupDebtsNew}  />
+            </Stack.Group>
         </Stack.Navigator>
     )
 } 

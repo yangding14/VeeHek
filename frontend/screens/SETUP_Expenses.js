@@ -15,6 +15,7 @@ function SETUP_Expenses(props) {
 
     const handleNewCategory = () => {
         console.log('New category pressed');
+        props.navigation.navigate('SetupExpensesNew');
     }
 
     const data = [

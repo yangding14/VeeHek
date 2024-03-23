@@ -3,8 +3,10 @@ import { Image, Keyboard, Modal, StyleSheet, Text, TextInput, TouchableWithoutFe
 import { colors, fonts, sh, sw } from '../styles/GlobalStyle';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
-function Wallet_EnvelopeNewOperation({isVisible, setIsVisible, setData}) {
+function SetupExpensesNew({isVisible, setIsVisible, setData}) {
+    const navigation = useNavigation();
     const [date, setDate] = React.useState(new Date());
     const onChange = (event, selectedDate) => {
         const currentDate = selectedDate || date;
@@ -15,56 +17,37 @@ function Wallet_EnvelopeNewOperation({isVisible, setIsVisible, setData}) {
     const [operationAmount, setOperationAmount] = useState(''); // Track the operation amount
 
     const handleCreate = () => {
-        setData(prev => [{
-            OperationName: operationName === '' ? 'Food' : operationName,
-            OperationDate: date.toDateString(),
-            OperationAmount: operationType === 'expense' ? `- RM ${operationAmount}` : `+ RM ${operationAmount}`
-        }, ...prev]);
-        setIsVisible(false);
+        // setData(prev => [{
+        //     OperationName: operationName === '' ? 'Food' : operationName,
+        //     OperationDate: date.toDateString(),
+        //     OperationAmount: operationType === 'expense' ? `- RM ${operationAmount}` : `+ RM ${operationAmount}`
+        // }, ...prev]);
+        navigation.goBack();
     }
 
     return (
-        <Modal visible={isVisible} transparent={true} animationType='slide' >
-            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-
+        <View>
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>   
                 <View style={styles.bg}>
                     <View style={{flexDirection: 'row', justifyContent:'space-between'}}>
-                        <TouchableWithoutFeedback hitSlop={40} onPress={() => setIsVisible(false)}>
+                        <TouchableWithoutFeedback hitSlop={40} onPress={() => navigation.goBack()}>
                             <Image source={require('../assets/arrow_left.png')} style={{flex: 1, resizeMode: 'contain', top: sh(6)}} />
                         </TouchableWithoutFeedback>
-                        <Text style={{fontFamily: fonts.RubikBold, fontSize: sh(26), textAlign: 'center', flex: 3}}>New Operation</Text>
+                        <Text style={{fontFamily: fonts.RubikBold, fontSize: sh(26), textAlign: 'center', flex: 3}}>New Category</Text>
                         <TouchableWithoutFeedback hitSlop={40} onPress={handleCreate} >
                             <Text style={{fontFamily: fonts.PoppinsMedium, fontSize: sh(18), color: colors.yellow, flex: 1, top: sh(4)}}>Create</Text>
-                        </TouchableWithoutFeedback>
-                    </View>
-
-                    <View style={{ flexDirection: 'row', marginTop: sh(20) }}>
-                        <TouchableWithoutFeedback onPress={() => setOperationType('expense')}>
-                            <View style={styles.button}>
-                                <Text style={[styles.text, operationType === 'expense' && styles.textFocused]}>Expense</Text>
-                            </View>
-                        </TouchableWithoutFeedback>
-                        <TouchableWithoutFeedback onPress={() => setOperationType('income')}>
-                            <View style={styles.button}>
-                                <Text style={[styles.text, operationType === 'income' && styles.textFocused]}>Income</Text>
-                            </View>
                         </TouchableWithoutFeedback>
                     </View>
 
                     {/* <Image source={require('../assets/logo.png')} style={{alignSelf: 'center', marginTop: sh(20)}} /> */}
 
 
+                    <TextInput value={operationName} onChangeText={(input) => setOperationName(input)} inputMode='text' placeholderTextColor={colors.grey} placeholder='Expense Name' style={{marginTop: sh(50), width: '100%', textAlign:'center', fontFamily: fonts.RubikBold, fontSize: sh(24)}} />
                     <View style={styles.line} />
                     <TextInput value={operationAmount} onChangeText={(input) => setOperationAmount(input)} inputMode='numeric' placeholder='RM 0' placeholderTextColor={colors.grey} style={{marginTop: sh(20), width: '100%', textAlign:'center', fontFamily: fonts.RubikBold, fontSize: sh(24)}} />
-                    <View style={styles.line} />
-                    <View style={{alignItems: 'center', marginTop: sh(20)}}>
-                        <DateTimePicker mode="date" value={date} onChange={onChange} />
-                    </View>
-                    <View style={styles.line} />
-                    <TextInput value={operationName} onChangeText={(input) => setOperationName(input)} inputMode='text' placeholderTextColor={colors.grey} placeholder='Expense Name (Optional)' style={{marginTop: sh(20), width: '100%', textAlign:'center', fontFamily: fonts.RubikBold, fontSize: sh(24)}} />
                 </View>
             </TouchableWithoutFeedback>
-        </Modal>
+        </View>
     );
 }
 
@@ -72,16 +55,7 @@ const styles = StyleSheet.create({
     bg:{
         backgroundColor: 'white',
         height: '100%',
-        marginTop: '23%',
-        borderTopLeftRadius: sw(24),
-        borderTopRightRadius: sw(24),
         paddingTop: sh(30),
-
-        shadowRadius: sw(4), //for ios
-        shadowColor:colors.black, //for ios
-        shadowOpacity: 0.12, //for ios
-        shadowOffset:{height: sh(1)}, //for ios
-        elevation: 2 //for android
     },
     line:{
         backgroundColor: colors.black,
@@ -114,4 +88,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Wallet_EnvelopeNewOperation;
+export default SetupExpensesNew;
