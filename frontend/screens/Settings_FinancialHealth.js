@@ -12,6 +12,17 @@ function Settings_FinancialHealth(props) {
     const [debts, setDebts] = useState(25);
     const [savings, setSavings] = useState(25);
     const [date, setDate] = useState('18 Mac 2024');
+    const [comment, setComment] = useState('Good');
+
+    const getComment = (point) => {
+        if (point >= 60) {
+            return 'Good';
+        } else if (point >= 30) {
+            return 'Poor';
+        } else {
+            return 'Bad';
+        }
+    };
 
     const getTintColor = (point) => {
         if (point >= 60) {
@@ -45,7 +56,7 @@ function Settings_FinancialHealth(props) {
             {
                 (fill) => (<View style={styles.progressBarContainer}>
                     <Text style={{fontFamily:fonts.InterRegular, fontSize:sh(24),  color:colors.greyBlue, opacity:0.6} }>
-                        Good
+                        {getComment(point)}
                     </Text>
                     <Text style={{fontFamily:fonts.InterBold, fontSize:sh(56), color:colors.greyBlue} }>
                     {point}
