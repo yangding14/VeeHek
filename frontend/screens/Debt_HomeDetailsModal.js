@@ -11,7 +11,7 @@ function Debt_HomeDetailsModal({isVisible, setIsModalVisible, data, currentIndex
                 <View>
                     <View style={{height: '100%', width: '100%', position: 'absolute', backgroundColor: colors.black, opacity: 0.85}} />
                     <View style={styles.bg} >
-                        <DebtHomeDetailsModalTotalRemaining />
+                        <DebtHomeDetailsModalTotalRemaining data={data} currentIndex={currentIndex} />
                         <DebtHomeDetailsModalDetails data={data} currentIndex={currentIndex} />
                         <Text style={styles.textDismiss}>TAP ANYWHERE TO DISMISS</Text>
                     </View>
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         width: '100%',
         paddingVertical: '20%',
-        paddingHorizontal: '15%'
+        paddingHorizontal: '5%'
     },
     textDismiss:{
         color: colors.white,

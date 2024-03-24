@@ -2,9 +2,12 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { colors, fonts, sh, sw } from '../styles/GlobalStyle';
 
-function DebtHomeDetailsModalTotalRemaining(props) {
-    let current = 400;
-    let total = 800;
+function DebtHomeDetailsModalTotalRemaining({data, currentIndex}) {
+    const toInt = (stringValue) => {
+        return parseInt(stringValue.replace(/[^\d]/g, ''))
+    }
+    let current = toInt(data[currentIndex].totalRepaid) - toInt(data[currentIndex].totalInterestPaid);
+    let total = toInt(data[currentIndex].amountBorrowed);
 
     const styles = StyleSheet.create({
         cardBg: {
@@ -51,6 +54,7 @@ function DebtHomeDetailsModalTotalRemaining(props) {
 
     return (
         <View style={styles.cardBg}>
+            {console.log(data[currentIndex])}
             <Text style={styles.textCurrentRemaining}>Total Debt</Text>
             <Text style={styles.textTotalRemaining}>RM{current}/RM{total}</Text>
             <View style={styles.progressBarBg} />

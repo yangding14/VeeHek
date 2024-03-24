@@ -2,9 +2,17 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { colors, fonts, sh, sw } from '../styles/GlobalStyle';
 
-function DebtHomeTotalRemaining(props) {
-    let current = 400;
-    let total = 800;
+function DebtHomeTotalRemaining({data}) {
+    const toInt = (stringValue) => {
+        return parseInt(stringValue.replace(/[^\d]/g, ''))
+    }
+    let paid = 0;
+    let total = 0;
+
+    data.map((item, index) => {
+        paid += toInt(item.totalRepaid) - toInt(item.totalInterestPaid);
+        total += toInt(item.amountBorrowed);
+    })
 
     const styles = StyleSheet.create({
         cardBg: {
@@ -44,7 +52,7 @@ function DebtHomeTotalRemaining(props) {
             backgroundColor: colors.yellow,
             borderRadius: sh(10),
             height: sh(20),
-            width: `${current/total*100}%`,
+            width: `${paid/total*100}%`,
             top: -sh(20)
         }
     })
@@ -52,7 +60,7 @@ function DebtHomeTotalRemaining(props) {
     return (
         <View style={styles.cardBg}>
             <Text style={styles.textCurrentRemaining}>Total Debt</Text>
-            <Text style={styles.textTotalRemaining}>RM{current}/RM{total}</Text>
+            <Text style={styles.textTotalRemaining}>RM{paid}/RM{total}</Text>
             <View style={styles.progressBarBg} />
             <View style={styles.progressBar} />
 

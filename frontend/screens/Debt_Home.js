@@ -14,19 +14,23 @@ function Debt_Home(props) {
         setIsModalVisible(true);
     };
 
+    const toInt = (stringValue) => {
+        return parseInt(stringValue.replace(/[^\d]/g, ''))
+    }
+
     const data = [
-        { debtName: 'PTPTN Loan', debtAmount: 'RM500', loanType: 'Education', amountBorrowed: 'RM1000', interestRate: '3%', repaymentPeriod: '5 years', monthlyRepayment: 'RM100', totalInterestPaid: 'RM500', totalRepaid: 'RM1500'},
-        { debtName: 'Car Loan', debtAmount: 'RM1000', loanType: 'Car', amountBorrowed: 'RM2000', interestRate: '4%', repaymentPeriod: '5 years', monthlyRepayment: 'RM200', totalInterestPaid: 'RM1000', totalRepaid: 'RM3000'},
-        { debtName: 'House Loan', debtAmount: 'RM2000', loanType: 'House', amountBorrowed: 'RM3000', interestRate: '5%', repaymentPeriod: '5 years', monthlyRepayment: 'RM300', totalInterestPaid: 'RM1500', totalRepaid: 'RM4500'},
-        { debtName: 'Personal Loan', debtAmount: 'RM3000', loanType: 'Personal', amountBorrowed: 'RM4000', interestRate: '6%', repaymentPeriod: '5 years', monthlyRepayment: 'RM400', totalInterestPaid: 'RM2000', totalRepaid: 'RM6000'},
-        { debtName: 'Business Loan', debtAmount: 'RM4000', loanType: 'Business', amountBorrowed: 'RM5000', interestRate: '7%', repaymentPeriod: '5 years', monthlyRepayment: 'RM500', totalInterestPaid: 'RM2500', totalRepaid: 'RM7500'}
+        { debtName: 'PTPTN Loan', debtAmount: 'RM500', loanType: 'Education', amountBorrowed: 'RM1000', interestRate: '3%', repaymentPeriod: '5 years', monthlyRepayment: 'RM100', totalInterestPaid: 'RM500', totalRepaid: 'RM1000'},
+        { debtName: 'Car Loan', debtAmount: 'RM1000', loanType: 'Car', amountBorrowed: 'RM2000', interestRate: '4%', repaymentPeriod: '5 years', monthlyRepayment: 'RM200', totalInterestPaid: 'RM1000', totalRepaid: 'RM1800'},
+        { debtName: 'House Loan', debtAmount: 'RM2000', loanType: 'House', amountBorrowed: 'RM3000', interestRate: '5%', repaymentPeriod: '5 years', monthlyRepayment: 'RM300', totalInterestPaid: 'RM1500', totalRepaid: 'RM2900'},
+        { debtName: 'Personal Loan', debtAmount: 'RM3000', loanType: 'Personal', amountBorrowed: 'RM4000', interestRate: '6%', repaymentPeriod: '5 years', monthlyRepayment: 'RM400', totalInterestPaid: 'RM2000', totalRepaid: 'RM3300'},
+        { debtName: 'Business Loan', debtAmount: 'RM4000', loanType: 'Business', amountBorrowed: 'RM5000', interestRate: '7%', repaymentPeriod: '5 years', monthlyRepayment: 'RM500', totalInterestPaid: 'RM2500', totalRepaid: 'RM2900'}
     ]
     return (
         <View style={appStyles.appBackground}>
             <View style={{marginHorizontal: sw(-40)}}>
 
                 <ScrollView style={{paddingHorizontal: sw(40)}}>
-                    <DebtHomeTotalRemaining />
+                    <DebtHomeTotalRemaining data={data} />
                     <Text style={{fontFamily: fonts.RubikBold, fontSize: sh(36), marginTop: sh(30)}}>Debt ({data.length})</Text>
 
                     {data.map((item, index) => (
@@ -34,7 +38,7 @@ function Debt_Home(props) {
                         key={index}
                         index={index}
                         debtName={item.debtName}
-                        debtAmount={item.debtAmount}
+                        debtAmount={(toInt(item.amountBorrowed) - toInt(item.totalRepaid) + toInt(item.totalInterestPaid))}
                         debtDate={item.debtDate}
                         onPress={() => toggleModalVisibility(index)} // Open modal on card press
                         />
