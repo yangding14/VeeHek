@@ -33,6 +33,7 @@ import SubscriptionModel from '../screens/SubscriptionModel';
 import DebtRepaymentPage from '../screens/DebtRepaymentPage';
 import BudgetEnvelopePage from '../screens/BudgetEnvelopePage';
 import SavedPlansPage from '../screens/SavedPlansPage';
+import DebtyBot from '../screens/DebtyBot';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -57,7 +58,7 @@ const screenOptions = {
         shadowOpacity: 0.12, //for ios
         shadowOffset:{height: sh(1)}, //for ios
         elevation: 2 //for android
-    }
+    },
 };
 
 const navTheme = {
