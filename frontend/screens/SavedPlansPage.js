@@ -2,6 +2,7 @@ import React from 'react';
 import { appStyles,sw,sh, fonts, colors } from '../styles/GlobalStyle';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import DebtRepaymentBox from '../components/DebtRepaymentBox';
 
 function SavedPlansPage(props) {
     const navigation = useNavigation();
@@ -18,7 +19,7 @@ function SavedPlansPage(props) {
             </TouchableOpacity>
             <Text style = {savedPlansPage.headerTitle}>Saved Plans</Text>
             </View>
-            <View style = {savedPlansPage.box}>
+            {/* <View style = {savedPlansPage.box}>
                 <Text style = {savedPlansPage.title}>31/12/2022</Text>
                 <View style = {[savedPlansPage.envelope, {backgroundColor:'#EBADA2' }]}>
                     <Image style = {savedPlansPage.icon} source={require('../assets/Food.png')}/>
@@ -35,7 +36,8 @@ function SavedPlansPage(props) {
                     <Text style= {savedPlansPage.envelopeText}>Transportation</Text>
                     <Text style = {savedPlansPage.envelopeBudget}>RM 150</Text>
                 </View>
-            </View>
+            </View> */}
+            <DebtRepaymentBox/>
             </View>
     );
 }
