@@ -10,7 +10,6 @@ function Debt_Home(props) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const toggleModalVisibility = (index) => {
-        console.log('Toggle modal visibility', index);
         setCurrentIndex(index);
         setIsModalVisible(true);
     };

@@ -149,58 +149,66 @@ else if (props.modelName == "Wisey") {
 // Freebie caters to essential financial needs by providing health assessments, budget tracking, and round-the-clock AI chatbot support. Despite its absence of debt plans, it remains steadfast as a dependable companion for effective financial management and guidance.
 else {
     return (
-    <View style =  {selectionBoxStyles.modelBox} >
-                <View style = {{flex:1.15, paddingRight: sw(10), borderRightWidth: sw(1), borderRightColor: colors.bgWhite}}>
-                <View style = {selectionBoxStyles.rowFlex}>
-                <Image source={require('../assets/Freebie.png')}/>
-                <Text style= {{color: colors.bgWhite, fontFamily: fonts.PoppinsRegular, fontSize: sh(34), padding:sw(10)}}>Freebie</Text>
+        <View style =  {selectionBoxStyles.modelBox} >
+            <View style = {{flex:1.15, paddingRight: sw(10), borderRightWidth: sw(1), borderRightColor: colors.bgWhite}}>
+                {/* model icon and freebie text  */}
+                <View style = {[selectionBoxStyles.rowFlex, {flexShrink: 1}]}>
+                    <Image source={require('../assets/Freebie.png')}/>
+                    <Text style= {{color: colors.bgWhite, fontFamily: fonts.PoppinsRegular, fontSize: sh(34), padding:sw(10), flexShrink: 1}}>Freebie</Text>
                 </View>
+                
+                {/* free text */}
                 <Text style = {{color: colors.bgWhite, fontFamily: fonts.PoppinsMedium, flexDirection:'row',paddingTop: sh(5)}}>
-                <Text style= {{fontSize: sh(32)}}>FREE</Text>
+                    <Text style= {{fontSize: sh(32)}}>FREE</Text>
                 </Text>
+                {/* line below free text */}
                 <View style={{flex: 1, borderBottomColor: colors.bgWhite, borderBottomWidth: 1}} />
+                {/* model description text */}
                 <Text style= {{color: colors.bgWhite, fontFamily: fonts.PoppinsLight, fontSize: sh(14), paddingTop:sh(5)}}>Freebie offers vital tools like health assessment, smart budget tracking, and 24/7 AI chatbot. Lacking debt repayment plans and automatic budgeting envelopes, Freebie still stands as a trustworthy, free companion.</Text>
                 <Text onPress={toggleModal} style= {{color: colors.yellow, fontFamily: fonts.PoppinsRegular, fontSize: sh(12),paddingTop: sh(10)}}>View more {'>'}</Text>
-                </View>
+            </View>
 
-                <View style = {{flex:1, paddingLeft: sw(10)}}>
-                    <Text style = {{color:colors.bgWhite, fontFamily: fonts.PoppinsRegular,fontSize:sh(12), flexDirection: 'column'}}>Features:</Text>
-                    <FeaturesAdvantageText text='Financial Health Assessment'/>
-                    <FeaturesAdvantageText text='Smart Envelope Budget Tracking'/>
-                    <FeaturesAdvantageText text='24/7 Financial Coach AI Chatbot'/>
-                    <FeaturesDisadvantageText text='AI Debt Repayment Plan Generation Monthly'/>
-                    <FeaturesDisadvantageText text='Automatic AI Monthly Budget Envelope Generation'/>
-                    <FeaturesDisadvantageText text='Trained on the Best Finance AI Model'/>
+            {/* features (right column) */}
+            <View style = {{flex:1, paddingLeft: sw(10)}}>
+                <Text style = {{color:colors.bgWhite, fontFamily: fonts.PoppinsRegular,fontSize:sh(12), flexDirection: 'column'}}>Features:</Text>
+                <FeaturesAdvantageText text='Financial Health Assessment'/>
+                <FeaturesAdvantageText text='Smart Envelope Budget Tracking'/>
+                <FeaturesAdvantageText text='24/7 Financial Coach AI Chatbot'/>
+                <FeaturesDisadvantageText text='AI Debt Repayment Plan Generation Monthly'/>
+                <FeaturesDisadvantageText text='Automatic AI Monthly Budget Envelope Generation'/>
+                <FeaturesDisadvantageText text='Trained on the Best Finance AI Model'/>
 
-                    <TouchableOpacity style= {selectionBoxStyles.buttonCSS}>
-                        {/* onPress function waiting */}
-                        <Text style={selectionBoxStyles.buttonText}>Subscribe</Text>
-                    </TouchableOpacity>
-                </View>
-                <Modal
+                <TouchableOpacity style= {selectionBoxStyles.buttonCSS}>
+                    {/* onPress function waiting */}
+                    <Text style={selectionBoxStyles.buttonText}>Subscribe</Text>
+                </TouchableOpacity>
+            </View>
+            
+            <Modal
                 animationType='slide'
                 transparent={true}
                 visible={modalVisible}
                 onRequestClose={() => {
                     setModalVisible(false);
                 }}
-                >
+            >
                 <View style={selectionBoxStyles.modalContainer}>
                     <View style = {{flexDirection: 'column'}}>
-                    <TouchableOpacity onPress={toggleModal}>
-                    <Image style= {{marginBottom: sh(15)}} source={require('../assets/whiteBg-arrow-left.png')}/>
-                    </TouchableOpacity>
-                    <Text style = {{color: colors.bgWhite, fontFamily: fonts.PoppinsRegular, fontSize: sh(52)}}>Freebie</Text>
-                    <Text style = {{color: colors.bgWhite, fontFamily: fonts.PoppinsMedium, flexDirection:'row',paddingTop: sh(5)}}>
-                    <Text style= {{fontSize: sh(42)}}>FREE</Text>
-                    </Text>
-                    <Text style= {{width: sw(245),color: colors.bgWhite, fontFamily: fonts.PoppinsLight, fontSize: sh(16), paddingTop:sh(10)}}>Freebie caters to essential financial needs with its health assessments, budget tracking, and 24/7 AI chatbot support. Though it lacks debt plans, it remains steadfast as a reliable companion for effective financial management and guidance, supporting users in navigating their financial journey with confidence.</Text>
+                        <TouchableOpacity onPress={toggleModal}>
+                            <Image style= {{marginBottom: sh(15)}} source={require('../assets/whiteBg-arrow-left.png')}/>
+                        </TouchableOpacity>
+                        <Text style = {{color: colors.bgWhite, fontFamily: fonts.PoppinsRegular, fontSize: sh(52)}}>Freebie</Text>
+                            <Text style = {{color: colors.bgWhite, fontFamily: fonts.PoppinsMedium, flexDirection:'row',paddingTop: sh(5)}}>
+                            <Text style= {{fontSize: sh(42)}}>FREE</Text>
+                            </Text>
+                        <Text style= {{width: sw(245),color: colors.bgWhite, fontFamily: fonts.PoppinsLight, fontSize: sh(16), paddingTop:sh(10)}}>Freebie caters to essential financial needs with its health assessments, budget tracking, and 24/7 AI chatbot support. Though it lacks debt plans, it remains steadfast as a reliable companion for effective financial management and guidance, supporting users in navigating their financial journey with confidence.</Text>
                     </View>
                     <Image style = {{alignSelf: 'center'}} source={require('../assets/FreebieFull.png')}/>   
-                    </View> 
-                </Modal>
-            </View>
-)}
+                </View> 
+            </Modal>
+        </View>
+    )
+}
 }
 const selectionBoxStyles = StyleSheet.create({
     
@@ -220,6 +228,7 @@ const selectionBoxStyles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
+        flex: 1,
     },
 
     featureCSS: {
