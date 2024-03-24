@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, View, Image, Text, Modal, TouchableOpacity} from 'react-native';
+import { StyleSheet, View, Image, Text, Modal, TouchableOpacity, TouchableWithoutFeedback} from 'react-native';
 import {appStyles, colors, fonts, sh, sw} from '../styles/GlobalStyle';
 
 
@@ -69,7 +69,9 @@ function AISelection_ModelBox(props) {
                     setModalVisible(false);
                 }}
                 >
+                    <TouchableWithoutFeedback onPress={toggleModal}>
                 <View style={selectionBoxStyles.modalContainer}>
+                <View style= {{position: 'absolute', width: '100%', height: '100%',  backgroundColor: 'black', opacity: 0.3}}/>
                     <View style = {selectionBoxStyles.modalContainerChild}>
                     <View style = {{flexDirection: 'column'}}>
                     <TouchableOpacity onPress={toggleModal}>
@@ -85,6 +87,7 @@ function AISelection_ModelBox(props) {
                     <Image style = {{alignSelf: 'center'}} source={require('../assets/DebtyFull.png')}/>   
                     </View> 
                     </View> 
+                    </TouchableWithoutFeedback>
                 </Modal>
             </View>
 
@@ -131,7 +134,9 @@ else if (props.modelName == "Wisey") {
                     setModalVisible(false);
                 }}
                 >
+                    <TouchableWithoutFeedback onPress={toggleModal}>
                 <View style={selectionBoxStyles.modalContainer}>
+                <View style= {{position: 'absolute', width: '100%', height: '100%',  backgroundColor: 'black', opacity: 0.3}}/>
                     <View style = {selectionBoxStyles.modalContainerChild}>
                     <View style = {{flexDirection: 'column'}}>
                     <TouchableOpacity onPress={toggleModal}>
@@ -147,6 +152,7 @@ else if (props.modelName == "Wisey") {
                     <Image style = {{alignSelf: 'center'}} source={require('../assets/WiseyFull.png')}/>   
                     </View> 
                     </View>
+                    </TouchableWithoutFeedback>
                 </Modal>
             </View>
 )}
@@ -189,14 +195,17 @@ else {
             </View>
             
             <Modal
-                animationType='slide'
+                animationType='fade'
                 transparent={true}
                 visible={modalVisible}
                 onRequestClose={() => {
                     setModalVisible(false);
                 }}
+                
             >
+                <TouchableWithoutFeedback onPress={toggleModal}>
                 <View style={selectionBoxStyles.modalContainer}>
+                    <View style= {{position: 'absolute', width: '100%', height: '100%',  backgroundColor: 'black', opacity: 0.3}}/>
                     <View style={selectionBoxStyles.modalContainerChild}>
                         <View style = {{flexDirection: 'column'}}>
                             <TouchableOpacity onPress={toggleModal}>
@@ -211,7 +220,11 @@ else {
                         <Image style = {{alignSelf: 'center'}} source={require('../assets/FreebieFull.png')}/>   
                     </View>
                 </View> 
+                </TouchableWithoutFeedback>
             </Modal>
+
+                
+
         </View>
     )
 }

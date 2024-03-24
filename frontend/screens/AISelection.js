@@ -17,16 +17,19 @@ const onPressSubscription = () => {
     return (
         <ScrollView showsVerticalScrollIndicator= {false} style= {appStyles.appBackground}>
             <Text style={{fontFamily: fonts.RubikBold, fontSize: sh(36), paddingHorizontal: sw(20), paddingBottom: sh(10)}}>Select Your Finance AI Partner</Text>
+            <TouchableOpacity onPress={onPressSubscription}>
             <View style={styles.viewSubscriptionBox}>
-                <View style =  {styles.lineViewSubscriptionBox}/>
-                <View style= {styles.flexBoxViewSubscriptionBox}>
-                    <Text style= {{color: colors.bgWhite, fontFamily: fonts.PoppinsMedium, fontSize: sh(24)}}>View my subscriptions</Text>
-                    <TouchableOpacity onPress={onPressSubscription}>
-                    <Image source={require('../assets/whiteBg-arrow-right.png')}/>
-                    </TouchableOpacity>
-                </View>
+                    <View style =  {styles.lineViewSubscriptionBox}/>
+                        
+                            <View style= {styles.flexBoxViewSubscriptionBox}>
+                                <Text style= {{color: colors.bgWhite, fontFamily: fonts.PoppinsMedium, fontSize: sh(24)}}>View my subscriptions</Text>
+                                <TouchableOpacity onPress={onPressSubscription}>
+                                    <Image source={require('../assets/whiteBg-arrow-right.png')}/>
+                                </TouchableOpacity>    
+                            </View>
                 <View style =  {styles.lineViewSubscriptionBox}/>
             </View>
+            </TouchableOpacity>    
             <AISelection_ModelBox modelName = {'Freebie'}/>
             <AISelection_ModelBox modelName = {'Wisey'}/>
             <AISelection_ModelBox modelName = {'Debty'}/>
