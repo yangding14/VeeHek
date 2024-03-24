@@ -13,8 +13,12 @@ function SetupDebtsNew({isVisible, setIsVisible, setData}) {
         setDate(currentDate);
     }
     const [operationType, setOperationType] = useState('expense'); // Track the operation type (expense or income)
-    const [operationName, setOperationName] = useState('');
-    const [operationAmount, setOperationAmount] = useState(''); // Track the operation amount
+    const [debtName, setDebtName] = useState('');
+    const [amount, setAmount] = useState(''); // Track the operation amount
+    const [interestRate, setInterestRate] = useState(''); // Track the operation amount
+    const [repaymentAmount, setRepaymentAmount] = useState(''); // Track the operation amount
+    const [nextPaymentDate, setNextPaymentDate] = useState(''); // Track the operation amount
+
 
     const handleCreate = () => {
         // setData(prev => [{
@@ -25,11 +29,11 @@ function SetupDebtsNew({isVisible, setIsVisible, setData}) {
         navigation.goBack();
     }
 
-    const FieldRender = ({fieldName, placeholderText}) => {
+    const FieldRender = ({fieldName, placeholderText, value, action}) => {
         return (
             <>
                 <Text style={styles.textFieldName}>{fieldName}</Text>
-                <TextInput value={operationName} onChangeText={(input) => setOperationName(input)} inputMode='text' placeholderTextColor={colors.grey} placeholder={placeholderText} style={styles.textInput} />
+                <TextInput value={value} onChangeText={action} inputMode='text' placeholderTextColor={colors.grey} placeholder={placeholderText} style={styles.textInput} />
                 <View style={styles.line} />
             </>
             )
@@ -52,12 +56,25 @@ function SetupDebtsNew({isVisible, setIsVisible, setData}) {
                     {/* <Image source={require('../assets/logo.png')} style={{alignSelf: 'center', marginTop: sh(20)}} /> */}
 
 
-                    <FieldRender fieldName={'Debt Name'} placeholderText={'Credit Card'} />
-                    <FieldRender fieldName={'Amount Due'} placeholderText={'RM 0'} />
-                    <FieldRender fieldName={'Interest Rate'} placeholderText={'14.95%'} />
-                    <FieldRender fieldName={'Repayment Amount'} placeholderText={'RM 100'} />
+                    
 
+                    <Text style={styles.textFieldName}>Debt Name</Text>
+                    <TextInput value={debtName} onChangeText={(input) => setDebtName(input)} inputMode='text' placeholder='Debt Name' placeholderTextColor={colors.grey} style={styles.textInput} />
+                    <View style={styles.line} />
+                    <Text style={styles.textFieldName}>Amount</Text>
+                    <TextInput value={amount} onChangeText={(input) => setAmount(input)} inputMode='numeric' placeholder='RM 0' placeholderTextColor={colors.grey} style={styles.textInput} />
+                    <View style={styles.line} />
+                    <Text style={styles.textFieldName}>Interest Rate</Text>
+                    <TextInput value={interestRate} onChangeText={(input) => setInterestRate(input)} inputMode='numeric' placeholder='0%' placeholderTextColor={colors.grey} style={styles.textInput} />
+                    <View style={styles.line} />
                     <Text style={styles.textFieldName}>Repayment Amount</Text>
+                    <TextInput value={repaymentAmount} onChangeText={(input) => setRepaymentAmount(input)} inputMode='numeric' placeholder='RM 0' placeholderTextColor={colors.grey} style={styles.textInput} />
+                    <View style={styles.line} />
+
+
+
+
+                    <Text style={styles.textFieldName}>Next Payment Date</Text>
                     <View style={{alignItems: 'flex-start', marginTop: sh(20), paddingLeft: sw(40)}}>
                         <DateTimePicker mode="date" value={date} />
                     </View>

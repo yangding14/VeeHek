@@ -9,7 +9,7 @@ function LR_Register(props) {
         props.navigation.navigate('Login');
     };
     const handleRegister = () => {
-        props.navigation.navigate('SETUP_Expenses');
+        props.navigation.navigate('SETUP_Expenses2');
     };
     return (
         <View style={{flex:1}}>

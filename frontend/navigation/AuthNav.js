@@ -15,6 +15,7 @@ import SETUP_Expenses from '../screens/SETUP_Expenses';
 import SETUP_Debts from '../screens/SETUP_Debts';
 import SetupExpensesNew from '../screens/SetupExpensesNew';
 import SetupDebtsNew from '../screens/SetupDebtsNew';
+import SETUP_Expenses2 from '../screens/SETUP_Expenses2';
 
 const Stack = createStackNavigator();
 
@@ -60,6 +61,7 @@ function Register(){
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen name="LR_Register" component={LR_Register} />
             <Stack.Screen name="SETUP_Expenses" component={SETUP_Expenses} />
+            <Stack.Screen name="SETUP_Expenses2" component={SETUP_Expenses2} />
             <Stack.Screen name="SETUP_Debts" component={SETUP_Debts} />
             <Stack.Group screenOptions={{ presentation: 'modal' }}> 
                 <Stack.Screen name="SetupExpensesNew" component={SetupExpensesNew}  />
