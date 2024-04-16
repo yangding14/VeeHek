@@ -1,3 +1,5 @@
+//This is an AI ChatBot
+
 import React, { useState } from 'react';
 import { ScrollView, KeyboardAvoidingView, TextInput, Image, Alert, Modal, StyleSheet, Text, Pressable, View } from 'react-native';
 import { colors , fonts, sw, sh} from '../styles/GlobalStyle';
