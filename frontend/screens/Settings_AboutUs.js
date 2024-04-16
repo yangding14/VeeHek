@@ -14,11 +14,8 @@ function Settings_AboutUs(props) {
             <Text style={{flex: 1, textAlign: 'center',fontFamily: fonts.RubikBold, fontSize: sh(20)}}>About Us</Text>
             </View>
 
-            {/* <Text style={{fontFamily: fonts.RubikBold, fontSize: sh(30),justifyContent: 'center'}}>About Us</Text> */}
-            
             <View style = {{ alignItems: 'center',justifyContent: 'center',paddingTop: sh(30)}}>
             <Image source={require('../assets/DebtyLogo.png')} /> 
-            {/* <View style = {{alignContent: 'center',justifyContent: 'center',backgroundColor:colors.yellow}}> */}
             </View>
             <Text style={{fontFamily: fonts.Poppins, fontSize: sh(17),textAlign: 'justify',paddingTop: sh(20)}}>Welcome to Debty, your dedicated ally in navigating the path to financial freedom and stability. Debty was conceived by a group of financial experts and technology enthusiasts united by the mission to democratize debt management for all.
             </Text>
