@@ -28,6 +28,7 @@ function Wallet_Envelope({navigation}) {
     ])
 
     return (
+        // test
         <View style={appStyles.appBackground}>
             <View style={{flexDirection: 'row'}}>
                 <TouchableWithoutFeedback hitSlop={40} onPress={() => navigation.goBack()}>
